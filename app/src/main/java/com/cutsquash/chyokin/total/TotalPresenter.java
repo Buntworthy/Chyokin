@@ -14,4 +14,14 @@ public class TotalPresenter implements TotalContract.Presenter {
     public void onClickAdd(boolean saving) {
         mView.showAdd();
     }
+
+    @Override
+    public void onClickNumber() {
+
+    }
+
+    @Override
+    public void onSubmit() {
+        mView.showTotal();
+    }
 }

@@ -10,11 +10,19 @@ public interface TotalContract {
         void updateTotal(int total);
 
         void showAdd();
+
+        void updateValue(int value);
+
+        void showTotal();
     }
 
     interface Presenter {
 
         void onClickAdd(boolean saving);
+
+        void onClickNumber();
+
+        void onSubmit();
 
     }
 }

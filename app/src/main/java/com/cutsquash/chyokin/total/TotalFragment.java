@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cutsquash.chyokin.R;
-import com.cutsquash.chyokin.add.AddActivity;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -30,14 +29,33 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_total, container, false);
-        rootView.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+        rootView.findViewById(R.id.button_add).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mPresenter.onClickAdd(true);
             }
         });
+
+        rootView.findViewById(R.id.button_total).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPresenter.onSubmit();
+            }
+        });
         return rootView;
 
+    }
+
+    @Override
+    public void showAdd() {
+        getView().findViewById(R.id.button_add).setVisibility(View.GONE);
+        getView().findViewById(R.id.button_total).setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void showTotal() {
+        getView().findViewById(R.id.button_add).setVisibility(View.VISIBLE);
+        getView().findViewById(R.id.button_total).setVisibility(View.GONE);
     }
 
     @Override
@@ -46,9 +64,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     }
 
     @Override
-    public void showAdd() {
-        // Start intent to add activity
-        Intent intent = new Intent(getActivity(), AddActivity.class);
-        startActivity(intent);
+    public void updateValue(int value) {
+
     }
 }
