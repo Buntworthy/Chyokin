@@ -20,7 +20,7 @@ public interface TotalContract {
 
         void onClickAdd(boolean saving);
 
-        void onClickNumber();
+        void onClickNumber(int value);
 
         void onSubmit();
 

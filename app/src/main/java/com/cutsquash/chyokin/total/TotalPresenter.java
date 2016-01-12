@@ -16,8 +16,8 @@ public class TotalPresenter implements TotalContract.Presenter {
     }
 
     @Override
-    public void onClickNumber() {
-
+    public void onClickNumber(int value) {
+        mView.updateValue(value);
     }
 
     @Override

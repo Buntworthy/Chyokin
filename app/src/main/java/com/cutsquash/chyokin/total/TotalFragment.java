@@ -60,11 +60,12 @@ public class TotalFragment extends Fragment implements TotalContract.View {
 
     @Override
     public void updateTotal(int total) {
-        // Update the total display
+        // Set total view to display total
     }
 
     @Override
     public void updateValue(int value) {
+        // Set value view to display value
 
     }
 }
