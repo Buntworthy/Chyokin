@@ -12,12 +12,18 @@ public class Model implements ModelContract.Model {
     private LinkedHashMap<Long, Integer> mData;
 
     public Model(ModelContract.DataStore dataStore) {
+
         this.mDataStore = dataStore;
     }
 
     @Override
     public void open() {
-        mData = mDataStore.load();
+        try {
+            mData = mDataStore.load();
+        } catch (Exception e) {
+            // TODO deal with exception
+            e.printStackTrace();
+        }
     }
 
     @Override

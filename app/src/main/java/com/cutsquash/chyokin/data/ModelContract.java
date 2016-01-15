@@ -2,6 +2,7 @@ package com.cutsquash.chyokin.data;
 
 import org.json.JSONException;
 
+import java.io.FileNotFoundException;
 import java.util.LinkedHashMap;
 
 /**
@@ -22,7 +23,7 @@ public interface ModelContract {
 
     interface DataStore {
 
-        LinkedHashMap load();
+        LinkedHashMap load() throws Exception;
 
         void save(LinkedHashMap<Long, Integer> data) throws Exception;
     }
