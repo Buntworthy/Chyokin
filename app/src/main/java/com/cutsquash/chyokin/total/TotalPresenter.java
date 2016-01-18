@@ -16,31 +16,42 @@ public class TotalPresenter implements TotalContract.Presenter {
         this.mView = view;
         this.mModel = model;
     }
-    @Override
-    public void onClickAdd(boolean saving) {
-
-        mView.showAdd();
-    }
 
     @Override
-    public void addSaving(int value) {
-        mModel.addValue(System.currentTimeMillis(), value);
-    }
-
-    @Override
-    public void onSubmit() {
-
-        mView.showTotal();
-        mView.updateTotal(mModel.getTotal());
-    }
-
-    @Override
-    public void loadData() {
+    public void onCreate() {
         mModel.open();
     }
 
     @Override
-    public void saveData() {
+    public void onPause() {
         mModel.close();
+    }
+
+    @Override
+    public void onClickSave(boolean saving) {
+
+        mView.showAddView();
+    }
+
+    @Override
+    public void onClickNumber() {
+        int value = 0; //TODO get value of clicked number
+        mView.updateValueDisplay(value);
+    }
+
+    @Override
+    public void onClickSubmit() {
+
+        int value = mView.getValueDisplay();
+        mModel.addValue(System.currentTimeMillis(), value);
+        mView.showTotalView();
+        updateTotal();
+
+    }
+
+    @Override
+    public void updateTotal() {
+        int total = mModel.getTotal();
+        mView.updateTotalDisplay(total);
     }
 }

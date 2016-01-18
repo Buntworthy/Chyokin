@@ -1,6 +1,5 @@
 package com.cutsquash.chyokin.total;
 
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -28,13 +27,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         super.onActivityCreated(savedInstanceState);
         Model model = new Model(new DataStoreFile(getContext()));
         mPresenter = new TotalPresenter(this, model);
-
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        mPresenter.loadData();
+        mPresenter.onCreate();
     }
 
     @Override
@@ -44,18 +37,14 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         rootView.findViewById(R.id.button_add).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mPresenter.onClickAdd(true);
+                mPresenter.onClickSave(true);
             }
         });
 
         rootView.findViewById(R.id.button_total).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO is this a memory leak?
-                EditText editText = (EditText) rootView.findViewById(R.id.editValue);
-                int value = Integer.parseInt(editText.getText().toString());
-                mPresenter.addSaving(value);
-                mPresenter.onSubmit();
+                mPresenter.onClickSubmit();
             }
         });
         return rootView;
@@ -65,31 +54,37 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     @Override
     public void onPause() {
         super.onPause();
-        mPresenter.saveData();
+        mPresenter.onPause();
     }
 
     @Override
-    public void showAdd() {
-        getView().findViewById(R.id.button_add).setVisibility(View.GONE);
-        getView().findViewById(R.id.button_total).setVisibility(View.VISIBLE);
+    public void showAddView() {
+        getView().findViewById(R.id.totalView).setVisibility(View.GONE);
+        getView().findViewById(R.id.addView).setVisibility(View.VISIBLE);
     }
 
     @Override
-    public void showTotal() {
-        getView().findViewById(R.id.button_add).setVisibility(View.VISIBLE);
-        getView().findViewById(R.id.button_total).setVisibility(View.GONE);
+    public void showTotalView() {
+        getView().findViewById(R.id.totalView).setVisibility(View.VISIBLE);
+        getView().findViewById(R.id.addView).setVisibility(View.GONE);
     }
 
     @Override
-    public void updateTotal(int total) {
+    public void updateTotalDisplay(int total) {
         // Set total view to display total
-        TextView totalView = (TextView) getView().findViewById(R.id.totalView);
+        TextView totalView = (TextView) getView().findViewById(R.id.totalValue);
         totalView.setText(Integer.toString(total));
     }
 
     @Override
-    public void updateValue(int value) {
-        // Set value view to display value
+    public void updateValueDisplay(int value) {
+        // TODO Set value view to display value
 
+    }
+
+    @Override
+    public int getValueDisplay() {
+        EditText editText = (EditText) getView().findViewById(R.id.editValue);
+        return Integer.parseInt(editText.getText().toString());
     }
 }

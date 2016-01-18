@@ -7,26 +7,33 @@ public interface TotalContract {
 
     interface View {
 
-        void updateTotal(int total);
+        void showTotalView();
 
-        void showAdd();
+        void showAddView();
 
-        void updateValue(int value);
+        void updateTotalDisplay(int total);
 
-        void showTotal();
+        void updateValueDisplay(int value);
+
+        int getValueDisplay();
     }
 
     interface Presenter {
 
-        void onClickAdd(boolean saving);
+        void onCreate();
 
-        void addSaving(int value);
+        void onPause();
 
-        void onSubmit();
+        // Click "Saved" or "Wasted" buttons on total view
+        void onClickSave(boolean saving);
 
-        void loadData();
+        // Click number key on add view
+        void onClickNumber();
 
-        void saveData();
+        // Click "Submit" button on add view
+        void onClickSubmit();
+
+        void updateTotal();
 
     }
 }
