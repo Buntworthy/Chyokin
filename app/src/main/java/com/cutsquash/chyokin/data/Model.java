@@ -14,6 +14,8 @@ public class Model implements ModelContract.Model {
     public Model(ModelContract.DataStore dataStore) {
 
         this.mDataStore = dataStore;
+        // load data from the dataStore
+        open();
     }
 
     @Override
@@ -34,6 +36,12 @@ public class Model implements ModelContract.Model {
             // TODO deal with exception
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void delete() {
+        mDataStore.delete();
+        open();
     }
 
     @Override

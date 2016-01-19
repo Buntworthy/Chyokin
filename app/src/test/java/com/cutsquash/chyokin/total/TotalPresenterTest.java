@@ -43,16 +43,6 @@ public class TotalPresenterTest {
     }
 
     @Test
-    public void testaddSaving() {
-
-    }
-
-    @Test
-    public void testOnClickNumber() throws Exception {
-
-    }
-
-    @Test
     public void testOnSubmit() throws Exception {
 
         // When the presenter click add

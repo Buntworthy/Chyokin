@@ -33,7 +33,8 @@ public interface TotalContract {
         // Click "Submit" button on add view
         void onClickSubmit();
 
-        void updateTotal();
+        void deleteData();
 
+        void updateTotal();
     }
 }

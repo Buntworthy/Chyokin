@@ -58,4 +58,11 @@ public class DataStoreFile implements ModelContract.DataStore {
         fos.close();
 
     }
+
+    @Override
+    public void delete() {
+        // Delete the file
+        File file = new File(mContext.getFilesDir(), DATA_FILENAME);
+        file.delete();
+    }
 }

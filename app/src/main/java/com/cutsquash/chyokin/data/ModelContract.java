@@ -16,6 +16,8 @@ public interface ModelContract {
 
         void close();
 
+        void delete();
+
         void addValue(long time, int value);
 
         int getTotal();
@@ -26,5 +28,7 @@ public interface ModelContract {
         LinkedHashMap load() throws Exception;
 
         void save(LinkedHashMap<Long, Integer> data) throws Exception;
+
+        void delete();
     }
 }

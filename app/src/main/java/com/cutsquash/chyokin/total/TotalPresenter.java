@@ -52,6 +52,13 @@ public class TotalPresenter implements TotalContract.Presenter {
     }
 
     @Override
+    public void deleteData(){
+        mModel.delete();
+        mView.showTotalView();
+        updateTotal();
+    }
+
+    @Override
     public void updateTotal() {
         int total = mModel.getTotal();
         mView.updateTotalDisplay(total);
