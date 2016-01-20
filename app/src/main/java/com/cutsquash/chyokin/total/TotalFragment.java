@@ -3,6 +3,7 @@ package com.cutsquash.chyokin.total;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -25,6 +26,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        hasOptionsMenu();
         Model model = new Model(new DataStoreFile(getContext()));
         mPresenter = new TotalPresenter(this, model);
         mPresenter.onCreate();
@@ -49,6 +51,20 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         });
         return rootView;
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_delete) {
+            mPresenter.deleteData();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
