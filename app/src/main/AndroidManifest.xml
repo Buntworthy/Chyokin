@@ -18,15 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".add.AddActivity"
-            android:label="@string/title_activity_add"
-            android:parentActivityName=".total.TotalActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.cutsquash.chyokin.total.TotalActivity" />
-        </activity>
     </application>
 
 </manifest>

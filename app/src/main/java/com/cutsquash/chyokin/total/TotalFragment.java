@@ -103,4 +103,8 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         EditText editText = (EditText) getView().findViewById(R.id.editValue);
         return Integer.parseInt(editText.getText().toString());
     }
+
+    public void onButtonClick(View view) {
+        // TODO handle button click
+    }
 }

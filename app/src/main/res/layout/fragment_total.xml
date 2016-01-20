@@ -8,7 +8,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".total.TotalFragment"
-    tools:showIn="@layout/activity_total">
+    tools:showIn="@layout/activity_total"
+    android:orientation="vertical">
 
 
     <LinearLayout
@@ -53,5 +54,8 @@
             android:id="@+id/button_total"/>
 
     </LinearLayout>
+
+
+    <include layout="@layout/pad_numeric" />
 
 </LinearLayout>
