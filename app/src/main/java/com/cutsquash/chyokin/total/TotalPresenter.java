@@ -40,16 +40,47 @@ public class TotalPresenter implements TotalContract.Presenter {
 
     @Override
     public void onClickNumber(int id) {
+        int value;
         switch (id){
             case R.id.digit_0:
-                Log.d("presenter", "digit 0!");
+                value = 0;
                 break;
             case R.id.digit_00:
-                Log.d("presenter", "digit 00!");
+                value = 100;
                 break;
+            case R.id.digit_1:
+                value = 1;
+                break;
+            case R.id.digit_2:
+                value = 2;
+                break;
+            case R.id.digit_3:
+                value = 3;
+                break;
+            case R.id.digit_4:
+                value = 4;
+                break;
+            case R.id.digit_5:
+                value = 5;
+                break;
+            case R.id.digit_6:
+                value = 6;
+                break;
+            case R.id.digit_7:
+                value = 7;
+                break;
+            case R.id.digit_8:
+                value = 8;
+                break;
+            case R.id.digit_9:
+                value = 9;
+                break;
+            default:
+                value = 0;
+                Log.e(getClass().getSimpleName(), "Unrecognised ID");
         }
 
-        mView.updateValueDisplay(0);
+        mView.updateValueDisplay(value);
     }
 
     @Override

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -105,7 +106,16 @@ public class TotalFragment extends Fragment implements TotalContract.View {
 
     @Override
     public void updateValueDisplay(int value) {
-        // TODO Set value view to display value
+        Button valueDisplay = (Button) getView().findViewById(R.id.button_total);
+        int currentValue = Integer.parseInt(valueDisplay.getText().toString());
+        if (value < 10) {
+            currentValue *= 10;
+            currentValue += value;
+        } else {
+            currentValue *= 100;
+        }
+        valueDisplay.setText(Integer.toString(currentValue));
+
 
     }
 
