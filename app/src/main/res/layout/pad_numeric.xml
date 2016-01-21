@@ -7,74 +7,74 @@
     android:rowCount="4"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
+
     <Button
         android:id="@+id/digit_1"
-        android:onClick="onButtonClick"
+        android:text="1"
         style="@style/NumberButton"/>
     <Button
         android:id="@+id/digit_2"
-        android:onClick="onButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="2"
         style="@style/NumberButton"/>
     <Button
         android:id="@+id/digit_3"
-        android:onClick="onButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="3"
         style="@style/NumberButton"/>
     <Button
         android:id="@+id/digit_4"
-        android:onClick="onButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="4"
         style="@style/NumberButton"/>
     <Button
         android:id="@+id/digit_5"
-        android:onClick="onButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="5"
         style="@style/NumberButton"/>
     <Button
         android:id="@+id/digit_6"
-        android:onClick="onButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="6"
         style="@style/NumberButton"/>
     <Button
         android:id="@+id/digit_7"
-        android:onClick="onButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="7"
         style="@style/NumberButton"/>
     <Button
         android:id="@+id/digit_8"
-        android:onClick="onButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="8"
         style="@style/NumberButton"/>
     <Button
         android:id="@+id/digit_9"
-        android:onClick="onButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="9"
         style="@style/NumberButton"/>
     <Button
         android:id="@+id/digit_00"
-        android:onClick="onButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="00"
         style="@style/NumberButton"/>
     <Button
         android:id="@+id/digit_0"
-        android:onClick="onButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="0"
         style="@style/NumberButton"/>
     <Button
         android:id="@+id/submit"
         android:contentDescription="equals"
-        android:onClick="onButtonClick"
-        android:text="equals"
+        android:text="submit"
         style="@style/NumberButton"/>
 </com.cutsquash.chyokin.total.CalculatorNumericPadLayout>

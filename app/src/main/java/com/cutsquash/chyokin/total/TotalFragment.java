@@ -36,17 +36,28 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_total, container, false);
+        // Add listener
         rootView.findViewById(R.id.button_add).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mPresenter.onClickSave(true);
             }
         });
-
+        // Total listener
         rootView.findViewById(R.id.button_total).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mPresenter.onClickSubmit();
+            }
+        });
+        // Button listener
+        CalculatorNumericPadLayout numberPad =
+                (CalculatorNumericPadLayout) rootView.findViewById(R.id.pad_numeric);
+        numberPad.setButtonListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPresenter.onClickNumber(v.getId());
+
             }
         });
         return rootView;
@@ -104,7 +115,4 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         return Integer.parseInt(editText.getText().toString());
     }
 
-    public void onButtonClick(View view) {
-        // TODO handle button click
-    }
 }

@@ -28,7 +28,7 @@ public interface TotalContract {
         void onClickSave(boolean saving);
 
         // Click number key on add view
-        void onClickNumber();
+        void onClickNumber(int id);
 
         // Click "Submit" button on add view
         void onClickSubmit();

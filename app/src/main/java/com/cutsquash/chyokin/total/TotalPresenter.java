@@ -1,5 +1,8 @@
 package com.cutsquash.chyokin.total;
 
+import android.util.Log;
+
+import com.cutsquash.chyokin.R;
 import com.cutsquash.chyokin.data.ModelContract;
 
 /**
@@ -36,9 +39,17 @@ public class TotalPresenter implements TotalContract.Presenter {
     }
 
     @Override
-    public void onClickNumber() {
-        int value = 0; //TODO get value of clicked number
-        mView.updateValueDisplay(value);
+    public void onClickNumber(int id) {
+        switch (id){
+            case R.id.digit_0:
+                Log.d("presenter", "digit 0!");
+                break;
+            case R.id.digit_00:
+                Log.d("presenter", "digit 00!");
+                break;
+        }
+
+        mView.updateValueDisplay(0);
     }
 
     @Override
