@@ -24,47 +24,43 @@ public class CalculatorNumericPadLayout extends CalculatorPadLayout {
     @Override
     public void onFinishInflate() {
         super.onFinishInflate();
-        Locale locale = getResources().getConfiguration().locale;
-
-        final DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance(locale);
-        final char zeroDigit = symbols.getZeroDigit();
         for (int childIndex = getChildCount() - 1; childIndex >= 0; --childIndex) {
             final View v = getChildAt(childIndex);
             if (v instanceof Button) {
                 final Button b = (Button) v;
                 switch (b.getId()) {
                     case R.id.digit_0:
-                        b.setText(String.valueOf(zeroDigit));
+                        b.setText(Integer.toString(0));
                         break;
                     case R.id.digit_1:
-                        b.setText(String.valueOf((char) (zeroDigit + 1)));
+                        b.setText(Integer.toString(1));
                         break;
                     case R.id.digit_2:
-                        b.setText(String.valueOf((char) (zeroDigit + 2)));
+                        b.setText(Integer.toString(2));
                         break;
                     case R.id.digit_3:
-                        b.setText(String.valueOf((char) (zeroDigit + 3)));
+                        b.setText(Integer.toString(3));
                         break;
                     case R.id.digit_4:
-                        b.setText(String.valueOf((char) (zeroDigit + 4)));
+                        b.setText(Integer.toString(4));
                         break;
                     case R.id.digit_5:
-                        b.setText(String.valueOf((char) (zeroDigit + 5)));
+                        b.setText(Integer.toString(5));
                         break;
                     case R.id.digit_6:
-                        b.setText(String.valueOf((char) (zeroDigit + 6)));
+                        b.setText(Integer.toString(6));
                         break;
                     case R.id.digit_7:
-                        b.setText(String.valueOf((char) (zeroDigit + 7)));
+                        b.setText(Integer.toString(7));
                         break;
                     case R.id.digit_8:
-                        b.setText(String.valueOf((char) (zeroDigit + 8)));
+                        b.setText(Integer.toString(8));
                         break;
                     case R.id.digit_9:
-                        b.setText(String.valueOf((char) (zeroDigit + 9)));
+                        b.setText(Integer.toString(9));
                         break;
-                    case R.id.dec_point:
-                        b.setText(String.valueOf(symbols.getDecimalSeparator()));
+                    case R.id.digit_00:
+                        b.setText("00");
                         break;
                 }
             }
