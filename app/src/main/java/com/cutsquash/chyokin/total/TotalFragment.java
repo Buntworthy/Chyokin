@@ -107,7 +107,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     public void updateTotalDisplay(int total) {
         // Set total view to display total
         TextView totalView = (TextView) getView().findViewById(R.id.totalValue);
-        totalView.setText(Integer.toString(total));
+        totalView.setText(formatValue(total));
     }
 
     @Override
@@ -127,6 +127,17 @@ public class TotalFragment extends Fragment implements TotalContract.View {
 
     }
 
+    @Override
+    public int getValueDisplay() {
+        return mCurrentValue;
+    }
+
+    // Private methods ////////////////////////////////////////////
+    private void clearValueDisplay() {
+        mCurrentValue = 0;
+        updateValueDisplay(mCurrentValue);
+    }
+
     private String formatValue(int value) {
         String formatted = Integer.toString(value);
         if (value < 100) { // pence
@@ -134,19 +145,9 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         } else { // pounds
             formatted = new StringBuilder(formatted)
                     .insert(formatted.length() - 2, ".")
+                    .insert(0, "£")
                     .toString();
         }
         return formatted;
-    }
-
-    @Override
-    public int getValueDisplay() {
-        return mCurrentValue;
-    }
-
-    private void clearValueDisplay() {
-        TextView valueDisplay = (TextView) getView().findViewById(R.id.valueDisplay);
-        valueDisplay.setText("0");
-        mCurrentValue = 0;
     }
 }
