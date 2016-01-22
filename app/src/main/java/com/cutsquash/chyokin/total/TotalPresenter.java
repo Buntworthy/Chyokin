@@ -45,9 +45,6 @@ public class TotalPresenter implements TotalContract.Presenter {
             case R.id.digit_0:
                 value = 0;
                 break;
-            case R.id.digit_00:
-                value = 100;
-                break;
             case R.id.digit_1:
                 value = 1;
                 break;
@@ -75,12 +72,26 @@ public class TotalPresenter implements TotalContract.Presenter {
             case R.id.digit_9:
                 value = 9;
                 break;
+            case R.id.submit:
+                value = -1;
+                break;
+            case R.id.cancel:
+                value = -2;
+                break;
             default:
                 value = 0;
                 Log.e(getClass().getSimpleName(), "Unrecognised ID");
         }
 
-        mView.updateValueDisplay(value);
+        if (value == -1) {
+            // The submit button
+            onClickSubmit();
+        } else if (value == -2) {
+            // Show Total view
+            mView.showTotalView();
+        } else {
+            mView.updateValueDisplay(value);
+        }
     }
 
     @Override
@@ -95,6 +106,7 @@ public class TotalPresenter implements TotalContract.Presenter {
 
     @Override
     public void deleteData(){
+        Log.d("Presenter", "Deleting data");
         mModel.delete();
         mView.showTotalView();
         updateTotal();

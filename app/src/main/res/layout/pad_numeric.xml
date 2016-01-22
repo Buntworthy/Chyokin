@@ -5,8 +5,8 @@
     android:id="@+id/pad_numeric"
     android:columnCount="3"
     android:rowCount="4"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_height="300dp"
+    android:layout_width="300dp">
 
     <Button
         android:id="@+id/digit_1"
@@ -61,10 +61,10 @@
         android:text="9"
         style="@style/NumberButton"/>
     <Button
-        android:id="@+id/digit_00"
+        android:id="@+id/cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="00"
+        android:text="x"
         style="@style/NumberButton"/>
     <Button
         android:id="@+id/digit_0"

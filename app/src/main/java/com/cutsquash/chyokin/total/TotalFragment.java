@@ -2,7 +2,10 @@ package com.cutsquash.chyokin.total;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +17,15 @@ import com.cutsquash.chyokin.R;
 import com.cutsquash.chyokin.data.DataStoreFile;
 import com.cutsquash.chyokin.data.Model;
 
+import java.util.Formatter;
+
 /**
  * A placeholder fragment containing a simple view.
  */
 public class TotalFragment extends Fragment implements TotalContract.View {
 
     private TotalContract.Presenter mPresenter;
+    private int mCurrentValue;
 
     public TotalFragment() {
     }
@@ -27,7 +33,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        hasOptionsMenu();
+        setHasOptionsMenu(true);
         Model model = new Model(new DataStoreFile(getContext()));
         mPresenter = new TotalPresenter(this, model);
         mPresenter.onCreate();
@@ -42,13 +48,6 @@ public class TotalFragment extends Fragment implements TotalContract.View {
             @Override
             public void onClick(View v) {
                 mPresenter.onClickSave(true);
-            }
-        });
-        // Total listener
-        rootView.findViewById(R.id.button_total).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mPresenter.onClickSubmit();
             }
         });
         // Button listener
@@ -66,11 +65,17 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     }
 
     @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        inflater.inflate(R.menu.menu_total, menu);
+    }
+
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here
+    // Handle action bar item clicks here
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_delete) {
             mPresenter.deleteData();
             return true;
@@ -89,6 +94,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     public void showAddView() {
         getView().findViewById(R.id.totalView).setVisibility(View.GONE);
         getView().findViewById(R.id.addView).setVisibility(View.VISIBLE);
+        clearValueDisplay();
     }
 
     @Override
@@ -106,23 +112,41 @@ public class TotalFragment extends Fragment implements TotalContract.View {
 
     @Override
     public void updateValueDisplay(int value) {
-        Button valueDisplay = (Button) getView().findViewById(R.id.button_total);
-        int currentValue = Integer.parseInt(valueDisplay.getText().toString());
+        int currentValue = mCurrentValue;
         if (value < 10) {
             currentValue *= 10;
             currentValue += value;
         } else {
             currentValue *= 100;
         }
-        valueDisplay.setText(Integer.toString(currentValue));
+        mCurrentValue = currentValue;
+        String formattedValue = formatValue(currentValue);
+        TextView valueDisplay = (TextView) getView().findViewById(R.id.valueDisplay);
+        valueDisplay.setText(formattedValue);
 
 
+    }
+
+    private String formatValue(int value) {
+        String formatted = Integer.toString(value);
+        if (value < 100) { // pence
+            formatted += "p";
+        } else { // pounds
+            formatted = new StringBuilder(formatted)
+                    .insert(formatted.length() - 2, ".")
+                    .toString();
+        }
+        return formatted;
     }
 
     @Override
     public int getValueDisplay() {
-        EditText editText = (EditText) getView().findViewById(R.id.editValue);
-        return Integer.parseInt(editText.getText().toString());
+        return mCurrentValue;
     }
 
+    private void clearValueDisplay() {
+        TextView valueDisplay = (TextView) getView().findViewById(R.id.valueDisplay);
+        valueDisplay.setText("0");
+        mCurrentValue = 0;
+    }
 }

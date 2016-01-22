@@ -33,29 +33,22 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:id="@+id/addView">
 
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/editValue"
-            android:layout_weight="1" />
-
-        <Button
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
-            android:id="@+id/button_total"/>
+            android:id="@+id/valueDisplay"
+            android:layout_weight="1"
+            android:text="0"/>
+
+        <include layout="@layout/pad_numeric" />
 
     </LinearLayout>
 
-
-    <include layout="@layout/pad_numeric" />
 
 </LinearLayout>
