@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cutsquash.chyokin.R;
@@ -51,15 +52,16 @@ public class TotalFragment extends Fragment implements TotalContract.View {
             }
         });
         // Button listener
-        CalculatorNumericPadLayout numberPad =
-                (CalculatorNumericPadLayout) rootView.findViewById(R.id.pad_numeric);
-        numberPad.setButtonListener(new View.OnClickListener() {
+        LinearLayout numberPad =
+                (LinearLayout) rootView.findViewById(R.id.pad_numeric);
+        View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mPresenter.onClickNumber(v.getId());
 
             }
-        });
+        };
+        setButtonListener(numberPad, listener);
         return rootView;
 
     }
@@ -69,7 +71,6 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         // Inflate the menu; this adds items to the action bar if it is present.
         inflater.inflate(R.menu.menu_total, menu);
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -83,6 +84,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
 
         return super.onOptionsItemSelected(item);
     }
+
 
     @Override
     public void onPause() {
@@ -149,5 +151,19 @@ public class TotalFragment extends Fragment implements TotalContract.View {
                     .toString();
         }
         return formatted;
+    }
+
+    private void setButtonListener(ViewGroup numberPad, View.OnClickListener listener) {
+        for (int childIndex = numberPad.getChildCount() - 1; childIndex >= 0; --childIndex) {
+            final View v = numberPad.getChildAt(childIndex);
+            if (v instanceof Button) {
+                final Button b = (Button) v;
+                b.setOnClickListener(listener);
+            } else if (v instanceof ViewGroup) {
+                // This might be a group which contains buttons
+                final ViewGroup vg = (ViewGroup) v;
+                setButtonListener(vg, listener);
+            }
+        }
     }
 }

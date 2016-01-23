@@ -1,80 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.cutsquash.chyokin.total.CalculatorNumericPadLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/pad_numeric"
-    android:columnCount="3"
-    android:rowCount="4"
-    android:layout_height="300dp"
-    android:layout_width="300dp">
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/digit_1"
-        android:text="1"
-        style="@style/NumberButton"/>
-    <Button
-        android:id="@+id/digit_2"
+    <!-- Row 1 -->
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2"
-        style="@style/NumberButton"/>
-    <Button
-        android:id="@+id/digit_3"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/digit_1"
+            android:text="1"
+            style="@style/NumberButton"/>
+        <Button
+            android:id="@+id/digit_2"
+            android:text="2"
+            style="@style/NumberButton"/>
+        <Button
+            android:id="@+id/digit_3"
+            android:text="3"
+            style="@style/NumberButton"/>
+
+    </LinearLayout>
+
+    <!-- Row 2 -->
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3"
-        style="@style/NumberButton"/>
-    <Button
-        android:id="@+id/digit_4"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/digit_4"
+            android:text="4"
+            style="@style/NumberButton"/>
+        <Button
+            android:id="@+id/digit_5"
+            android:text="5"
+            style="@style/NumberButton"/>
+        <Button
+            android:id="@+id/digit_6"
+            android:text="6"
+            style="@style/NumberButton"/>
+
+    </LinearLayout>
+
+    <!-- Row 3 -->
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="4"
-        style="@style/NumberButton"/>
-    <Button
-        android:id="@+id/digit_5"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/digit_7"
+            android:text="7"
+            style="@style/NumberButton"/>
+        <Button
+            android:id="@+id/digit_8"
+            android:text="8"
+            style="@style/NumberButton"/>
+        <Button
+            android:id="@+id/digit_9"
+            android:text="9"
+            style="@style/NumberButton"/>
+
+    </LinearLayout>
+
+    <!-- Row 4 -->
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="5"
-        style="@style/NumberButton"/>
-    <Button
-        android:id="@+id/digit_6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="6"
-        style="@style/NumberButton"/>
-    <Button
-        android:id="@+id/digit_7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="7"
-        style="@style/NumberButton"/>
-    <Button
-        android:id="@+id/digit_8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="8"
-        style="@style/NumberButton"/>
-    <Button
-        android:id="@+id/digit_9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="9"
-        style="@style/NumberButton"/>
-    <Button
-        android:id="@+id/cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="x"
-        style="@style/NumberButton"/>
-    <Button
-        android:id="@+id/digit_0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        style="@style/NumberButton"/>
-    <Button
-        android:id="@+id/submit"
-        android:contentDescription="equals"
-        android:text="submit"
-        style="@style/NumberButton"/>
-</com.cutsquash.chyokin.total.CalculatorNumericPadLayout>
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancel"
+            android:text="cancel"
+            style="@style/NumberButton"/>
+        <Button
+            android:id="@+id/digit_0"
+            android:text="0"
+            style="@style/NumberButton"/>
+        <Button
+            android:id="@+id/submit"
+            android:contentDescription="equals"
+            android:text="submit"
+            style="@style/NumberButton"/>
+
+    </LinearLayout>
+
+</LinearLayout>
