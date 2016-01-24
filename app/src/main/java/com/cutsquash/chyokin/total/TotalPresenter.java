@@ -22,7 +22,6 @@ public class TotalPresenter implements TotalContract.Presenter {
 
     @Override
     public void onCreate() {
-        mModel.open();
         mView.showTotalView();
         updateTotal();
     }

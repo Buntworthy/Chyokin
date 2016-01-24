@@ -26,7 +26,7 @@ public class DataStoreFile implements ModelContract.DataStore {
     @Override
     public LinkedHashMap<Long, Integer> load() throws Exception {
 
-        LinkedHashMap<Long, Integer> data;
+        LinkedHashMap<Long, Integer> data=null;
 
         // Check for the file
         File file = new File(mContext.getFilesDir(), DATA_FILENAME);
@@ -34,8 +34,14 @@ public class DataStoreFile implements ModelContract.DataStore {
         if (file.exists()) {
             // Read in the file
             FileInputStream inputStream = mContext.openFileInput(DATA_FILENAME);
-            ObjectInputStream ois = new ObjectInputStream(inputStream);
-            data = (LinkedHashMap<Long, Integer>) ois.readObject();
+            if (inputStream.available() > 0) {
+                ObjectInputStream ois = new ObjectInputStream(inputStream);
+                data = (LinkedHashMap<Long, Integer>) ois.readObject();
+            } else {
+                Log.d(this.toString(), "Problem with file, starting fresh");
+                data = new LinkedHashMap<>();
+                data.put(System.currentTimeMillis(), 0);
+            }
             inputStream.close();
         } else {
             // No existing file

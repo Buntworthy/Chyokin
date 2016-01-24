@@ -1,5 +1,6 @@
 package com.cutsquash.chyokin.total;
 
+import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -23,6 +24,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
 
     private TotalContract.Presenter mPresenter;
     private int mCurrentValue;
+    private int mTotal;
 
     public TotalFragment() {
     }
@@ -105,7 +107,9 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     public void updateTotalDisplay(int total) {
         // Set total view to display total
         TextView totalView = (TextView) getView().findViewById(R.id.totalValue);
-        totalView.setText(formatValue(total));
+        startCountAnimation(totalView, mTotal, total);
+        mTotal = total;
+
     }
 
     @Override
@@ -136,6 +140,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         updateValueDisplay(mCurrentValue);
     }
 
+    // Adding £ and p symbols to value
     private String formatValue(int value) {
         String formatted = Integer.toString(value);
         if (value < 100) { // pence
@@ -147,6 +152,19 @@ public class TotalFragment extends Fragment implements TotalContract.View {
                     .toString();
         }
         return formatted;
+    }
+
+    // Animate increase in the total view
+    private void startCountAnimation(final TextView view, int startValue, int endValue) {
+        ValueAnimator animator = new ValueAnimator();
+        animator.setObjectValues(startValue, endValue);
+        animator.setDuration(500);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            public void onAnimationUpdate(ValueAnimator animation) {
+                view.setText(formatValue((int) animation.getAnimatedValue()));
+            }
+        });
+        animator.start();
     }
 
     private void setButtonListener(ViewGroup numberPad, View.OnClickListener listener) {

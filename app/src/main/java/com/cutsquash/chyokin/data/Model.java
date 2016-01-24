@@ -1,5 +1,7 @@
 package com.cutsquash.chyokin.data;
 
+import android.util.Log;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -21,6 +23,7 @@ public class Model implements ModelContract.Model {
     @Override
     public void open() {
         try {
+            Log.d(getClass().getSimpleName(), "opening data");
             mData = mDataStore.load();
         } catch (Exception e) {
             // TODO deal with exception

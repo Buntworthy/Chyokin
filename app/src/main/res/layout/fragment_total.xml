@@ -14,7 +14,8 @@
         android:orientation="vertical"
         android:id="@+id/totalView"
         android:gravity="center"
-        android:paddingBottom="16dp">
+        android:paddingBottom="16dp"
+        android:padding="16dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -76,7 +77,7 @@
         android:background="#51c2ca"
         android:gravity="center"
         android:visibility="gone"
-        android:paddingBottom="16dp">
+        android:padding="16dp">
 
         <TextView
             android:layout_width="wrap_content"
