@@ -110,11 +110,27 @@ public class TotalFragment extends Fragment implements TotalContract.View {
                     public void callback() {
                         animView.setVisibility(View.GONE);
                         getView().findViewById(R.id.totalView).setVisibility(View.GONE);
-                        getView().findViewById(R.id.addView).setVisibility(View.VISIBLE);
+                        animateShowAddView();
                     }
                 });
         animView.startAnimation(animation);
         clearValueDisplay();
+
+    }
+
+    public void animateShowAddView() {
+
+        View addView = getView().findViewById(R.id.addView);
+        addView.setVisibility(View.VISIBLE);
+        Animation a = AnimationUtils.loadAnimation(getContext(), R.anim.save_button_anim);
+        List<View> views = Utils.getAllChildren(addView);
+        for (int childIndex = 0; childIndex < views.size(); childIndex++) {
+            final View v = views.get(childIndex);
+            if (v instanceof Button) {
+                final Button b = (Button) v;
+                b.startAnimation(a);
+            }
+        }
 
     }
 
