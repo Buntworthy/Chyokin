@@ -9,6 +9,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,6 +18,10 @@ import android.widget.TextView;
 import com.cutsquash.chyokin.R;
 import com.cutsquash.chyokin.data.DataStoreFile;
 import com.cutsquash.chyokin.data.Model;
+import com.cutsquash.chyokin.utils.AnimUtils;
+import com.cutsquash.chyokin.utils.Utils;
+
+import java.util.List;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -92,9 +98,24 @@ public class TotalFragment extends Fragment implements TotalContract.View {
 
     @Override
     public void showAddView() {
-        getView().findViewById(R.id.totalView).setVisibility(View.GONE);
-        getView().findViewById(R.id.addView).setVisibility(View.VISIBLE);
+
+        final View animView = getView().findViewById(R.id.add_animation);
+        animView.setVisibility(View.VISIBLE);
+        Animation animation = AnimUtils.animationWithCallback(
+                // Animation
+                AnimationUtils.loadAnimation(getContext(), R.anim.save_button_anim),
+                // Callback
+                new AnimUtils.AnimationCallback() {
+                    @Override
+                    public void callback() {
+                        animView.setVisibility(View.GONE);
+                        getView().findViewById(R.id.totalView).setVisibility(View.GONE);
+                        getView().findViewById(R.id.addView).setVisibility(View.VISIBLE);
+                    }
+                });
+        animView.startAnimation(animation);
         clearValueDisplay();
+
     }
 
     @Override
@@ -168,15 +189,12 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     }
 
     private void setButtonListener(ViewGroup numberPad, View.OnClickListener listener) {
-        for (int childIndex = numberPad.getChildCount() - 1; childIndex >= 0; --childIndex) {
-            final View v = numberPad.getChildAt(childIndex);
+        List<View> views = Utils.getAllChildren(numberPad);
+        for (int childIndex = 0; childIndex < views.size(); childIndex++) {
+            final View v = views.get(childIndex);
             if (v instanceof Button) {
                 final Button b = (Button) v;
                 b.setOnClickListener(listener);
-            } else if (v instanceof ViewGroup) {
-                // This might be a group which contains buttons
-                final ViewGroup vg = (ViewGroup) v;
-                setButtonListener(vg, listener);
             }
         }
     }
