@@ -1,6 +1,7 @@
 package com.cutsquash.chyokin.total;
 
 import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cutsquash.chyokin.R;
+import com.cutsquash.chyokin.about.AboutActivity;
 import com.cutsquash.chyokin.data.DataStoreFile;
 import com.cutsquash.chyokin.data.Model;
 import com.cutsquash.chyokin.utils.AnimUtils;
@@ -83,6 +85,10 @@ public class TotalFragment extends Fragment implements TotalContract.View {
 
         if (id == R.id.action_delete) {
             mPresenter.deleteData();
+            return true;
+        } else if (id == R.id.action_about) {
+            Intent intent = new Intent(getContext(), AboutActivity.class);
+            startActivity(intent);
             return true;
         }
 
