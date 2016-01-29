@@ -58,6 +58,13 @@ public class TotalFragment extends Fragment implements TotalContract.View {
                 mPresenter.onClickSave(true);
             }
         });
+        // Waste listener
+        rootView.findViewById(R.id.button_waste).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPresenter.onClickSave(false);
+            }
+        });
         // Button listener
         LinearLayout numberPad =
                 (LinearLayout) rootView.findViewById(R.id.pad_numeric);
@@ -104,9 +111,18 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     }
 
     @Override
-    public void showAddView() {
+    public void showAddView(boolean save) {
 
-        final View animView = getView().findViewById(R.id.add_animation);
+        final View animView;
+        if (save) {
+            animView = getView().findViewById(R.id.add_animation);
+            getView().findViewById(R.id.addView).setBackgroundColor(
+                    getResources().getColor(R.color.colorPrimarySave));
+        } else {
+            animView = getView().findViewById(R.id.waste_animation);
+            getView().findViewById(R.id.addView).setBackgroundColor(
+                    getResources().getColor(R.color.colorPrimaryWaste));
+        }
         animView.setVisibility(View.VISIBLE);
         Animation animation = AnimUtils.animationWithCallback(
                 // Animation

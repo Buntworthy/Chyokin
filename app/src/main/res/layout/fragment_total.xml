@@ -97,4 +97,13 @@
         app:layout_anchor="@id/button_add"
         app:layout_anchorGravity="center"/>
 
+    <Button
+        android:id="@+id/waste_animation"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@drawable/round_button_waste"
+        android:visibility="gone"
+        app:layout_anchor="@id/button_waste"
+        app:layout_anchorGravity="center"/>
+
 </android.support.design.widget.CoordinatorLayout>
