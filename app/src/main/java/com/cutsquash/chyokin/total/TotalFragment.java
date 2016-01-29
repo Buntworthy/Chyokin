@@ -4,6 +4,7 @@ import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -128,12 +129,13 @@ public class TotalFragment extends Fragment implements TotalContract.View {
 
         View addView = getView().findViewById(R.id.addView);
         addView.setVisibility(View.VISIBLE);
-        Animation a = AnimationUtils.loadAnimation(getContext(), R.anim.save_button_anim);
         List<View> views = Utils.getAllChildren(addView);
         for (int childIndex = 0; childIndex < views.size(); childIndex++) {
             final View v = views.get(childIndex);
             if (v instanceof Button) {
                 final Button b = (Button) v;
+                Animation a = AnimationUtils.loadAnimation(getContext(), R.anim.number_button_anim);
+                a.setStartOffset(10 * (childIndex - 8));
                 b.startAnimation(a);
             }
         }
