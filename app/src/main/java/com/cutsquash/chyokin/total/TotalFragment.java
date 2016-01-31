@@ -72,14 +72,20 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         // Button listener
         LinearLayout numberPad =
                 (LinearLayout) rootView.findViewById(R.id.pad_numeric);
-        View.OnClickListener listener = new View.OnClickListener() {
+        final View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mPresenter.onClickNumber(v.getId());
 
             }
         };
-        setButtonListener(numberPad, listener);
+        setOnButtons(numberPad,
+                new ButtonMethod() {
+                    @Override
+                    public void run(Button b) {
+                        b.setOnClickListener(listener);
+                    }
+                });
         return rootView;
 
     }
@@ -228,7 +234,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     }
 
     private void setViewColours(boolean save) {
-        int colourToSet;
+        final int colourToSet;
         View rootView = getView();
 
         // Choose a colour
@@ -243,8 +249,14 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         ActionBar bar = ((AppCompatActivity) getActivity()).getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(colourToSet));
 
-        // Set the number pad buttons
-        setButtonColour((ViewGroup) rootView.findViewById(R.id.pad_numeric), colourToSet);
+        // Set the number pad buttons;
+        setOnButtons((ViewGroup) rootView.findViewById(R.id.pad_numeric),
+                new ButtonMethod() {
+                    @Override
+                    public void run(Button b) {
+                        b.setTextColor(colourToSet);
+                    }
+                });
 
         // Set the text correctly
         TextView caption = (TextView) rootView.findViewById(R.id.valueCaption);
@@ -284,24 +296,17 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     }
 
     // TODO combine the below methods
-    private void setButtonListener(ViewGroup numberPad, View.OnClickListener listener) {
-        List<View> views = Utils.getAllChildren(numberPad);
-        for (int childIndex = 0; childIndex < views.size(); childIndex++) {
-            final View v = views.get(childIndex);
-            if (v instanceof Button) {
-                final Button b = (Button) v;
-                b.setOnClickListener(listener);
-            }
-        }
+    interface ButtonMethod {
+        void run(Button b);
     }
 
-    private void setButtonColour(ViewGroup numberPad, int colour) {
+    private void setOnButtons(ViewGroup numberPad, ButtonMethod buttonMethod) {
         List<View> views = Utils.getAllChildren(numberPad);
         for (int childIndex = 0; childIndex < views.size(); childIndex++) {
             final View v = views.get(childIndex);
             if (v instanceof Button) {
                 final Button b = (Button) v;
-                b.setTextColor(colour);
+                buttonMethod.run(b);
             }
         }
     }
