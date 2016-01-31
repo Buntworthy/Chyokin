@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimarySave">#51c2ca</color>
-    <color name="colorPrimarySaveDark">#327b80</color>
-    <color name="colorPrimaryWaste">#e2633c</color>
-    <color name="colorPrimaryWasteDark">#803c32</color>
+    <color name="colorPrimarySave">#4DB6AC</color>
+    <color name="colorPrimarySaveDark">#00897B</color>
+    <color name="colorPrimaryWaste">#EF5350</color>
+    <color name="colorPrimaryWasteDark">#D32F2F</color>
 
     <color name="colorAccent">#FF4081</color>
 </resources>
