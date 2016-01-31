@@ -109,7 +109,6 @@ public class TotalPresenter implements TotalContract.Presenter {
 
     @Override
     public void deleteData(){
-        Log.d("Presenter", "Deleting data");
         mModel.delete();
         mView.showTotalView(false);
         updateTotal();

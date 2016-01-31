@@ -26,6 +26,8 @@ import com.cutsquash.chyokin.data.DataStoreFile;
 import com.cutsquash.chyokin.data.Model;
 import com.cutsquash.chyokin.utils.AnimUtils;
 import com.cutsquash.chyokin.utils.Utils;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.util.List;
 
@@ -86,6 +88,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
                         b.setOnClickListener(listener);
                     }
                 });
+
         return rootView;
 
     }
@@ -295,7 +298,6 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         animator.start();
     }
 
-    // TODO combine the below methods
     interface ButtonMethod {
         void run(Button b);
     }

@@ -4,7 +4,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@color/colorPrimarySaveDark</item>
     </style>
 
     <style name="NumberButton" parent="android:Widget.Material.Light.Button.Borderless">
@@ -25,4 +25,6 @@
         <item name="android:fontFamily">sans-serif-light</item>
         <!--<item name="android:stateListAnimator">@null</item>-->
     </style>
+
+
 </resources>
