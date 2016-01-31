@@ -2,8 +2,10 @@
 <resources>
     <color name="colorPrimarySave">#4DB6AC</color>
     <color name="colorPrimarySaveDark">#00897B</color>
+    <color name="colorPrimarySaveLight">#80CBC4</color>
     <color name="colorPrimaryWaste">#EF5350</color>
     <color name="colorPrimaryWasteDark">#D32F2F</color>
+    <color name="colorPrimaryWasteLight">#E57373</color>
 
     <color name="colorAccent">#FF4081</color>
 </resources>
