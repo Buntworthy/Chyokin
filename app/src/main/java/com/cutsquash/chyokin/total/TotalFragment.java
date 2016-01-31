@@ -25,9 +25,8 @@ import com.cutsquash.chyokin.about.AboutActivity;
 import com.cutsquash.chyokin.data.DataStoreFile;
 import com.cutsquash.chyokin.data.Model;
 import com.cutsquash.chyokin.utils.AnimUtils;
+import com.cutsquash.chyokin.utils.DeleteDialog;
 import com.cutsquash.chyokin.utils.Utils;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 
 import java.util.List;
 
@@ -105,7 +104,15 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         int id = item.getItemId();
 
         if (id == R.id.action_delete) {
-            mPresenter.deleteData();
+            DeleteDialog dialog = new DeleteDialog();
+            dialog.setListener(new DeleteDialog.DeleteDialogListener() {
+                @Override
+                public void deleteItem() {
+                    mPresenter.deleteData();
+                }
+            });
+            dialog.show(getFragmentManager(), "deleteConfirm");
+
             return true;
         } else if (id == R.id.action_about) {
             Intent intent = new Intent(getContext(), AboutActivity.class);
@@ -152,24 +159,6 @@ public class TotalFragment extends Fragment implements TotalContract.View {
 
     }
 
-    public void animateShowAddView() {
-
-        View addView = getView().findViewById(R.id.addView);
-        addView.setVisibility(View.VISIBLE);
-        List<View> views = Utils.getAllChildren(addView);
-        int buttonCount = 0;
-        for (int childIndex = 0; childIndex < views.size(); childIndex++) {
-            final View v = views.get(childIndex);
-            if (v instanceof Button) {
-                final Button b = (Button) v;
-                Animation a = AnimationUtils.loadAnimation(getContext(), R.anim.number_button_anim);
-                a.setStartOffset(10 * (buttonCount++));
-                b.startAnimation(a);
-            }
-        }
-
-    }
-
     @Override
     public void showTotalView(boolean withAnimation) {
         getView().findViewById(R.id.totalView).setVisibility(View.VISIBLE);
@@ -207,7 +196,6 @@ public class TotalFragment extends Fragment implements TotalContract.View {
 
     }
 
-
     @Override
     public void updateValueDisplay(int value) {
         int currentValue = mCurrentValue;
@@ -225,6 +213,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
 
     }
 
+
     @Override
     public int getValueDisplay() {
         return mCurrentValue;
@@ -234,6 +223,24 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     private void clearValueDisplay() {
         mCurrentValue = 0;
         updateValueDisplay(mCurrentValue);
+    }
+
+    private void animateShowAddView() {
+
+        View addView = getView().findViewById(R.id.addView);
+        addView.setVisibility(View.VISIBLE);
+        List<View> views = Utils.getAllChildren(addView);
+        int buttonCount = 0;
+        for (int childIndex = 0; childIndex < views.size(); childIndex++) {
+            final View v = views.get(childIndex);
+            if (v instanceof Button) {
+                final Button b = (Button) v;
+                Animation a = AnimationUtils.loadAnimation(getContext(), R.anim.number_button_anim);
+                a.setStartOffset(10 * (buttonCount++));
+                b.startAnimation(a);
+            }
+        }
+
     }
 
     private void setViewColours(boolean save) {

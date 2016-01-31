@@ -12,4 +12,7 @@
     <string name="action_about">About</string>
     <string name="banner_ad_unit_id">ca-app-pub-7212727682946618/3727411741</string>
     <string name="testDevice_id">01F490D805BB908CAC94749A9B874210</string>
+    <string name="delete_message">Really delete all savings?</string>
+    <string name="delete_confirm">Yes</string>
+    <string name="delete_cancel">No</string>
 </resources>
