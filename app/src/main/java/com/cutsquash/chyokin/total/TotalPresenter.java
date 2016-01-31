@@ -34,7 +34,7 @@ public class TotalPresenter implements TotalContract.Presenter {
     @Override
     public void onClickSave(boolean saving) {
 
-        mView.showAddView();
+        mView.showAddView(saving);
     }
 
     @Override

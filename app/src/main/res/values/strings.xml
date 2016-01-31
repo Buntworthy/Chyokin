@@ -5,4 +5,8 @@
     <string name="value_text">Enter saving:</string>
     <string name="saveButton_text">Save!</string>
     <string name="wasteButton_text">Waste</string>
+    <string name="about_name">About</string>
+    <string name="about_text">Small acts of willpower help you save a little bit at a time: not buying that coffee, choosing a cheaper option, or finding a better deal. All these virtuous actions costs will power, and the payoff you get is often under appreciated.
+    Chyokin helps you keep track of how much you save (and when you waste), to see the benefits of being disciplined and saving towards a goal.</string>
+    <string name="action_about">About</string>
 </resources>

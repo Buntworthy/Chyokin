@@ -1,6 +1,7 @@
 package com.cutsquash.chyokin.total;
 
 import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -17,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cutsquash.chyokin.R;
+import com.cutsquash.chyokin.about.AboutActivity;
 import com.cutsquash.chyokin.data.DataStoreFile;
 import com.cutsquash.chyokin.data.Model;
 import com.cutsquash.chyokin.utils.AnimUtils;
@@ -56,6 +58,13 @@ public class TotalFragment extends Fragment implements TotalContract.View {
                 mPresenter.onClickSave(true);
             }
         });
+        // Waste listener
+        rootView.findViewById(R.id.button_waste).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPresenter.onClickSave(false);
+            }
+        });
         // Button listener
         LinearLayout numberPad =
                 (LinearLayout) rootView.findViewById(R.id.pad_numeric);
@@ -85,6 +94,10 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         if (id == R.id.action_delete) {
             mPresenter.deleteData();
             return true;
+        } else if (id == R.id.action_about) {
+            Intent intent = new Intent(getContext(), AboutActivity.class);
+            startActivity(intent);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -98,9 +111,18 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     }
 
     @Override
-    public void showAddView() {
+    public void showAddView(boolean save) {
 
-        final View animView = getView().findViewById(R.id.add_animation);
+        final View animView;
+        if (save) {
+            animView = getView().findViewById(R.id.add_animation);
+            getView().findViewById(R.id.addView).setBackgroundColor(
+                    getResources().getColor(R.color.colorPrimarySave));
+        } else {
+            animView = getView().findViewById(R.id.waste_animation);
+            getView().findViewById(R.id.addView).setBackgroundColor(
+                    getResources().getColor(R.color.colorPrimaryWaste));
+        }
         animView.setVisibility(View.VISIBLE);
         Animation animation = AnimUtils.animationWithCallback(
                 // Animation
@@ -124,12 +146,13 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         View addView = getView().findViewById(R.id.addView);
         addView.setVisibility(View.VISIBLE);
         List<View> views = Utils.getAllChildren(addView);
+        int buttonCount = 0;
         for (int childIndex = 0; childIndex < views.size(); childIndex++) {
             final View v = views.get(childIndex);
             if (v instanceof Button) {
                 final Button b = (Button) v;
                 Animation a = AnimationUtils.loadAnimation(getContext(), R.anim.number_button_anim);
-                a.setStartOffset(10 * (childIndex - 8));
+                a.setStartOffset(10 * (buttonCount++));
                 b.startAnimation(a);
             }
         }
@@ -140,7 +163,22 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     public void showTotalView() {
         getView().findViewById(R.id.totalView).setVisibility(View.VISIBLE);
         getView().findViewById(R.id.addView).setVisibility(View.GONE);
+
+        final View animView = getView().findViewById(R.id.add_animation);
+        animView.setVisibility(View.VISIBLE);
+        Animation animation = AnimUtils.animationWithCallback(
+                // Animation
+                AnimationUtils.loadAnimation(getContext(), R.anim.save_button_reverse_anim),
+                // Callback
+                new AnimUtils.AnimationCallback() {
+                    @Override
+                    public void callback() {
+                        animView.setVisibility(View.GONE);
+                    }
+                });
+        animView.startAnimation(animation);
     }
+
 
     @Override
     public void updateTotalDisplay(int total) {

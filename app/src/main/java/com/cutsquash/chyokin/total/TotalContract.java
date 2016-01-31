@@ -9,7 +9,7 @@ public interface TotalContract {
 
         void showTotalView();
 
-        void showAddView();
+        void showAddView(boolean saving);
 
         void updateTotalDisplay(int total);
 
