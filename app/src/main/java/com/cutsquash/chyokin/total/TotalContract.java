@@ -7,7 +7,7 @@ public interface TotalContract {
 
     interface View {
 
-        void showTotalView();
+        void showTotalView(boolean withAnimation);
 
         void showAddView(boolean saving);
 

@@ -2,9 +2,12 @@ package com.cutsquash.chyokin.total;
 
 import android.animation.ValueAnimator;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -34,6 +37,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     private TotalContract.Presenter mPresenter;
     private int mCurrentValue;
     private int mTotal;
+    private boolean saveStatus;
 
     public TotalFragment() {
     }
@@ -111,17 +115,14 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     }
 
     @Override
-    public void showAddView(boolean save) {
+    public void showAddView(final boolean save) {
 
+        saveStatus = save;
         final View animView;
         if (save) {
             animView = getView().findViewById(R.id.add_animation);
-            getView().findViewById(R.id.addView).setBackgroundColor(
-                    getResources().getColor(R.color.colorPrimarySave));
-        } else {
+            } else {
             animView = getView().findViewById(R.id.waste_animation);
-            getView().findViewById(R.id.addView).setBackgroundColor(
-                    getResources().getColor(R.color.colorPrimaryWaste));
         }
         animView.setVisibility(View.VISIBLE);
         Animation animation = AnimUtils.animationWithCallback(
@@ -133,6 +134,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
                     public void callback() {
                         animView.setVisibility(View.GONE);
                         getView().findViewById(R.id.totalView).setVisibility(View.GONE);
+                        setViewColours(save);
                         animateShowAddView();
                     }
                 });
@@ -160,25 +162,32 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     }
 
     @Override
-    public void showTotalView() {
+    public void showTotalView(boolean withAnimation) {
         getView().findViewById(R.id.totalView).setVisibility(View.VISIBLE);
         getView().findViewById(R.id.addView).setVisibility(View.GONE);
+        setViewColours(true);
 
-        final View animView = getView().findViewById(R.id.add_animation);
-        animView.setVisibility(View.VISIBLE);
-        Animation animation = AnimUtils.animationWithCallback(
-                // Animation
-                AnimationUtils.loadAnimation(getContext(), R.anim.save_button_reverse_anim),
-                // Callback
-                new AnimUtils.AnimationCallback() {
-                    @Override
-                    public void callback() {
-                        animView.setVisibility(View.GONE);
-                    }
-                });
-        animView.startAnimation(animation);
+        if (withAnimation) {
+            final View animView;
+            if (saveStatus) {
+                animView = getView().findViewById(R.id.add_animation);
+            } else {
+                animView = getView().findViewById(R.id.waste_animation);
+            }
+            animView.setVisibility(View.VISIBLE);
+            Animation animation = AnimUtils.animationWithCallback(
+                    // Animation
+                    AnimationUtils.loadAnimation(getContext(), R.anim.save_button_reverse_anim),
+                    // Callback
+                    new AnimUtils.AnimationCallback() {
+                        @Override
+                        public void callback() {
+                            animView.setVisibility(View.GONE);
+                        }
+                    });
+            animView.startAnimation(animation);
+        }
     }
-
 
     @Override
     public void updateTotalDisplay(int total) {
@@ -188,6 +197,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         mTotal = total;
 
     }
+
 
     @Override
     public void updateValueDisplay(int value) {
@@ -217,6 +227,35 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         updateValueDisplay(mCurrentValue);
     }
 
+    private void setViewColours(boolean save) {
+        int colourToSet;
+        View rootView = getView();
+
+        // Choose a colour
+        if (save) {
+            colourToSet = ContextCompat.getColor(getContext(), R.color.colorPrimarySave);
+        } else {
+            colourToSet = ContextCompat.getColor(getContext(), R.color.colorPrimaryWaste);
+        }
+
+        // Set colours
+        rootView.findViewById(R.id.addView).setBackgroundColor(colourToSet);
+        ActionBar bar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        bar.setBackgroundDrawable(new ColorDrawable(colourToSet));
+
+        // Set the number pad buttons
+        setButtonColour((ViewGroup) rootView.findViewById(R.id.pad_numeric), colourToSet);
+
+        // Set the text correctly
+        TextView caption = (TextView) rootView.findViewById(R.id.valueCaption);
+        if (save) {
+            caption.setText(R.string.valueSave_text);
+        } else {
+            caption.setText(R.string.valueWaste_text);
+        }
+
+    }
+
     // Adding £ and p symbols to value
     private String formatValue(int value) {
         String formatted = Integer.toString(value);
@@ -244,6 +283,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         animator.start();
     }
 
+    // TODO combine the below methods
     private void setButtonListener(ViewGroup numberPad, View.OnClickListener listener) {
         List<View> views = Utils.getAllChildren(numberPad);
         for (int childIndex = 0; childIndex < views.size(); childIndex++) {
@@ -251,6 +291,17 @@ public class TotalFragment extends Fragment implements TotalContract.View {
             if (v instanceof Button) {
                 final Button b = (Button) v;
                 b.setOnClickListener(listener);
+            }
+        }
+    }
+
+    private void setButtonColour(ViewGroup numberPad, int colour) {
+        List<View> views = Utils.getAllChildren(numberPad);
+        for (int childIndex = 0; childIndex < views.size(); childIndex++) {
+            final View v = views.get(childIndex);
+            if (v instanceof Button) {
+                final Button b = (Button) v;
+                b.setTextColor(colour);
             }
         }
     }

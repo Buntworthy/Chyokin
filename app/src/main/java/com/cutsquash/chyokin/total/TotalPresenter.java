@@ -13,6 +13,8 @@ public class TotalPresenter implements TotalContract.Presenter {
     private TotalContract.View mView;
     private ModelContract.Model mModel;
 
+    private boolean saveStatus;
+
     public TotalPresenter(TotalContract.View view,
                           ModelContract.Model model) {
 
@@ -22,7 +24,7 @@ public class TotalPresenter implements TotalContract.Presenter {
 
     @Override
     public void onCreate() {
-        mView.showTotalView();
+        mView.showTotalView(false);
         updateTotal();
     }
 
@@ -35,6 +37,7 @@ public class TotalPresenter implements TotalContract.Presenter {
     public void onClickSave(boolean saving) {
 
         mView.showAddView(saving);
+        saveStatus = saving;
     }
 
     @Override
@@ -87,7 +90,7 @@ public class TotalPresenter implements TotalContract.Presenter {
             onClickSubmit();
         } else if (value == -2) {
             // Show Total view
-            mView.showTotalView();
+            mView.showTotalView(true);
         } else {
             mView.updateValueDisplay(value);
         }
@@ -97,8 +100,9 @@ public class TotalPresenter implements TotalContract.Presenter {
     public void onClickSubmit() {
 
         int value = mView.getValueDisplay();
+        if (!saveStatus) { value *= -1; }
         mModel.addValue(System.currentTimeMillis(), value);
-        mView.showTotalView();
+        mView.showTotalView(true);
         updateTotal();
 
     }
@@ -107,7 +111,7 @@ public class TotalPresenter implements TotalContract.Presenter {
     public void deleteData(){
         Log.d("Presenter", "Deleting data");
         mModel.delete();
-        mView.showTotalView();
+        mView.showTotalView(false);
         updateTotal();
     }
 

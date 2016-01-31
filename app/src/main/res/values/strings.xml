@@ -2,7 +2,8 @@
     <string name="app_name">Chyokin</string>
     <string name="action_delete">Delete</string>
     <string name="total_text">You\'ve saved:</string>
-    <string name="value_text">Enter saving:</string>
+    <string name="valueSave_text">Enter saving:</string>
+    <string name="valueWaste_text">Enter waste:</string>
     <string name="saveButton_text">Save!</string>
     <string name="wasteButton_text">Waste</string>
     <string name="about_name">About</string>
