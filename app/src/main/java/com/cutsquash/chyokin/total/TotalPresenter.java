@@ -4,11 +4,16 @@ import android.util.Log;
 
 import com.cutsquash.chyokin.R;
 import com.cutsquash.chyokin.data.ModelContract;
+import com.cutsquash.chyokin.utils.DeleteDialog;
+import com.cutsquash.chyokin.utils.TargetDialog;
 
 /**
  * Created by Justin on 11/01/2016.
  */
-public class TotalPresenter implements TotalContract.Presenter {
+public class TotalPresenter
+        implements TotalContract.Presenter,
+                    TargetDialog.TargetDialogListener,
+                    DeleteDialog.DeleteDialogListener{
 
     private TotalContract.View mView;
     private ModelContract.Model mModel;
@@ -128,5 +133,11 @@ public class TotalPresenter implements TotalContract.Presenter {
             Log.d("Target", Float.toString(fraction));
             mView.updateTargetDisplay(fraction);
         }
+    }
+
+    @Override
+    public void setTarget(int target) {
+        mTarget.setTarget(target);
+        updateTotal();
     }
 }

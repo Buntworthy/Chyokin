@@ -39,5 +39,7 @@ public interface TotalContract {
 
         void updateTotal();
 
+        void setTarget(int target);
+
     }
 }

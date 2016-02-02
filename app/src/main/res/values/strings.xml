@@ -15,4 +15,5 @@
     <string name="delete_message">Really delete all savings?</string>
     <string name="delete_confirm">Yes</string>
     <string name="delete_cancel">No</string>
+    <string name="action_setTarget">Set target</string>
 </resources>

@@ -29,6 +29,7 @@ import com.cutsquash.chyokin.data.ModelContract;
 import com.cutsquash.chyokin.data.Target;
 import com.cutsquash.chyokin.utils.AnimUtils;
 import com.cutsquash.chyokin.utils.DeleteDialog;
+import com.cutsquash.chyokin.utils.TargetDialog;
 import com.cutsquash.chyokin.utils.Utils;
 
 import java.util.List;
@@ -51,7 +52,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         super.onActivityCreated(savedInstanceState);
         setHasOptionsMenu(true);
         Model model = new Model(new DataStoreFile(getContext()));
-        ModelContract.Target target = new Target(getContext());
+        ModelContract.Target target = new Target(getActivity());
         mPresenter = new TotalPresenter(this, model, target);
         mPresenter.onCreate();
     }
@@ -109,15 +110,14 @@ public class TotalFragment extends Fragment implements TotalContract.View {
 
         if (id == R.id.action_delete) {
             DeleteDialog dialog = new DeleteDialog();
-            dialog.setListener(new DeleteDialog.DeleteDialogListener() {
-                @Override
-                public void deleteItem() {
-                    mPresenter.deleteData();
-                }
-            });
+            dialog.setListener((DeleteDialog.DeleteDialogListener) mPresenter);
             dialog.show(getFragmentManager(), "deleteConfirm");
 
             return true;
+        } else if (id == R.id.action_setTarget) {
+            TargetDialog dialog = new TargetDialog();
+            dialog.setListener((TargetDialog.TargetDialogListener) mPresenter);
+            dialog.show(getFragmentManager(), "setTarget");
         } else if (id == R.id.action_about) {
             Intent intent = new Intent(getContext(), AboutActivity.class);
             startActivity(intent);
