@@ -31,4 +31,13 @@ public interface ModelContract {
 
         void delete();
     }
+
+    interface Target {
+        // Savings target interface
+
+        int getTarget();
+
+        void setTarget(int target);
+
+    }
 }

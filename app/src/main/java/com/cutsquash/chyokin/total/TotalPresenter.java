@@ -12,14 +12,17 @@ public class TotalPresenter implements TotalContract.Presenter {
 
     private TotalContract.View mView;
     private ModelContract.Model mModel;
+    private ModelContract.Target mTarget;
 
     private boolean saveStatus;
 
     public TotalPresenter(TotalContract.View view,
-                          ModelContract.Model model) {
+                          ModelContract.Model model,
+                          ModelContract.Target target) {
 
         this.mView = view;
         this.mModel = model;
+        this.mTarget = target;
     }
 
     @Override
@@ -118,5 +121,12 @@ public class TotalPresenter implements TotalContract.Presenter {
     public void updateTotal() {
         int total = mModel.getTotal();
         mView.updateTotalDisplay(total);
+
+        int target = mTarget.getTarget();
+        if (target > 0) {
+            float fraction = (float)total / target;
+            Log.d("Target", Float.toString(fraction));
+            mView.updateTargetDisplay(fraction);
+        }
     }
 }

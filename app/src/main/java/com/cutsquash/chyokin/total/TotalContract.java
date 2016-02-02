@@ -16,6 +16,8 @@ public interface TotalContract {
         void updateValueDisplay(int value);
 
         int getValueDisplay();
+
+        void updateTargetDisplay(float fraction);
     }
 
     interface Presenter {
@@ -36,5 +38,6 @@ public interface TotalContract {
         void deleteData();
 
         void updateTotal();
+
     }
 }

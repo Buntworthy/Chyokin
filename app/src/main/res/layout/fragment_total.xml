@@ -39,6 +39,13 @@
             android:layout_weight="1"
             android:fontFamily="sans-serif-light" />
 
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progress_bar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:indeterminate="false" />
+
         <Button
             android:layout_width="128dp"
             android:layout_height="128dp"

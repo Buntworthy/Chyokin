@@ -18,12 +18,15 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.cutsquash.chyokin.R;
 import com.cutsquash.chyokin.about.AboutActivity;
 import com.cutsquash.chyokin.data.DataStoreFile;
 import com.cutsquash.chyokin.data.Model;
+import com.cutsquash.chyokin.data.ModelContract;
+import com.cutsquash.chyokin.data.Target;
 import com.cutsquash.chyokin.utils.AnimUtils;
 import com.cutsquash.chyokin.utils.DeleteDialog;
 import com.cutsquash.chyokin.utils.Utils;
@@ -48,7 +51,8 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         super.onActivityCreated(savedInstanceState);
         setHasOptionsMenu(true);
         Model model = new Model(new DataStoreFile(getContext()));
-        mPresenter = new TotalPresenter(this, model);
+        ModelContract.Target target = new Target(getContext());
+        mPresenter = new TotalPresenter(this, model, target);
         mPresenter.onCreate();
     }
 
@@ -210,7 +214,13 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         TextView valueDisplay = (TextView) getView().findViewById(R.id.valueDisplay);
         valueDisplay.setText(formattedValue);
 
+    }
 
+    @Override
+    public void updateTargetDisplay(float fraction) {
+        ProgressBar bar = (ProgressBar) getView().findViewById(R.id.progress_bar);
+        float progress = fraction * bar.getMax();
+        bar.setProgress((int) progress);
     }
 
 
