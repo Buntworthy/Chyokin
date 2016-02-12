@@ -1,0 +1,33 @@
+html, body {
+min-height: 100%; /* you Already have this */
+height: 100%; /* Add this */
+ }
+
+h1 {
+  padding-bottom: 50px;
+}
+
+.container {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -60px;
+}
+
+.starter-template {
+  font-family:Century Gothic;
+  padding: 40px 15px;
+  text-align: center;
+  color: #4db6ac;
+  margin:auto;
+  width:60%;
+}
+
+.footer {
+  text-align: center;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #4db6ac;;
+}
