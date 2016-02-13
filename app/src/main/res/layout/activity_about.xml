@@ -25,13 +25,32 @@
         android:gravity="center"
         android:padding="16dp" />
 
-    <!-- TODO put in links etc-->
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LINKS ETC"
+        android:orientation="horizontal"
         android:gravity="center"
-        android:padding="16dp" />
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/github_mark"
+            android:tint="@android:color/darker_gray"
+            android:gravity="center"
+            android:layout_margin="12dp"
+            android:onClick="goGithub"/>
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/twitterlogo_white"
+            android:tint="@android:color/darker_gray"
+            android:gravity="center"
+            android:layout_margin="12dp"
+            android:onClick="goTwitter"/>
+
+    </LinearLayout>
 
     <ImageView
         android:layout_width="32dp"

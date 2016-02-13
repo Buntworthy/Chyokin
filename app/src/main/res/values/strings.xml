@@ -7,8 +7,14 @@
     <string name="saveButton_text">Save!</string>
     <string name="wasteButton_text">Waste</string>
     <string name="about_name">About</string>
-    <string name="about_text">Small acts of willpower help you save a little bit at a time: not buying that coffee, choosing a cheaper option, or finding a better deal. All these virtuous actions costs will power, and the payoff you get is often under appreciated.
-        \n\nChyokin helps you keep track of how much you save (and when you waste), to see the benefits of being disciplined and saving towards a goal.</string>
+    <string name="about_text">Small acts of willpower help you save a little bit at a time:
+        not buying that coffee, choosing a cheaper option, or finding a better deal. All these
+        virtuous actions costs will power, and the payoff you get is often under appreciated.
+
+        \n\nChyokin helps you keep track of how much you save (and when you waste), to see the
+        benefits of being disciplined and saving towards a goal.
+
+        \n\nMade by Justin Pinkney</string>
     <string name="action_about">About</string>
     <string name="banner_ad_unit_id">ca-app-pub-7212727682946618/3727411741</string>
     <string name="testDevice_id">01F490D805BB908CAC94749A9B874210</string>
@@ -18,4 +24,6 @@
     <string name="action_setTarget">Set target</string>
     <string name="target_dialog_message">Set your savings target in £</string>
     <string name="target_dialog_hint">Savings target (£)</string>
+    <string name="github_repo">https://github.com/Buntworthy/Chyokin</string>
+    <string name="twitter">https://twitter.com/Buntworthy</string>
 </resources>
