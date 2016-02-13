@@ -36,16 +36,19 @@ public class TargetDialog extends DialogFragment {
         // TODO add text changed listener for currency formatting
 
         builder.setView(inflater.inflate(R.layout.dialog_target, null))
-                .setMessage("Set saving target:")
-                .setPositiveButton(R.string.delete_confirm, new DialogInterface.OnClickListener() {
+                .setMessage(getString(R.string.target_dialog_message))
+                .setPositiveButton(R.string.target_confirm, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+
                         EditText targetValue = (EditText) ((AlertDialog) dialog)
                                 .findViewById(R.id.target);
+                        // Set the target (convert to pence)
                         mListener.setTarget(
-                                Integer.parseInt(targetValue.getText().toString()));
+                                100*Integer.parseInt(targetValue.getText().toString()));
+
                     }
                 })
-                .setNegativeButton(R.string.delete_cancel, new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.target_cancel, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // User cancelled the dialog, do nothing
                     }

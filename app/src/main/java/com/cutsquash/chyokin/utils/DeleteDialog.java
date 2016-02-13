@@ -35,12 +35,12 @@ public class DeleteDialog extends DialogFragment {
         // Use the Builder class for convenient dialog construction
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setMessage(R.string.delete_message)
-                .setPositiveButton(R.string.delete_confirm, new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.target_confirm, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         mListener.deleteData();
                     }
                 })
-                .setNegativeButton(R.string.delete_cancel, new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.target_cancel, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // User cancelled the dialog, do nothing
                     }
