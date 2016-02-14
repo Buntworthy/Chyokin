@@ -231,6 +231,16 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         mTargetView.setProgress(fraction);
     }
 
+    @Override
+    public void showTarget() {
+        getView().findViewById(R.id.target_bar).setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideTarget() {
+        getView().findViewById(R.id.target_bar).setVisibility(View.INVISIBLE);
+    }
+
 
     @Override
     public int getValueDisplay() {

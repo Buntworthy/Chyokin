@@ -18,6 +18,10 @@ public interface TotalContract {
         int getValueDisplay();
 
         void updateTargetDisplay(float fraction);
+
+        void showTarget();
+
+        void hideTarget();
     }
 
     interface Presenter {

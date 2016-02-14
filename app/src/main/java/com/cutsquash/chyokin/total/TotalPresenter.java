@@ -33,6 +33,12 @@ public class TotalPresenter
     @Override
     public void onCreate() {
         mView.showTotalView(false);
+        if (mTarget.getTarget() > 0) {
+            // Show the target view
+            mView.showTarget();
+        } else {
+            mView.hideTarget();
+        }
         updateTotal();
     }
 
@@ -138,6 +144,12 @@ public class TotalPresenter
     @Override
     public void setTarget(int target) {
         mTarget.setTarget(target);
+        if (mTarget.getTarget() > 0) {
+            // Show the target view
+            mView.showTarget();
+        } else {
+            mView.hideTarget();
+        }
         updateTotal();
     }
 }

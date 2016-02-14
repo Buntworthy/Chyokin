@@ -21,6 +21,7 @@ public class TargetView {
     }
 
     public void setProgress(float progress) {
+        // TODO deal with progress > 1
         int nChildren = targetView.getChildCount();
         int childrenToFill = (int) Math.floor(progress*nChildren);
         for (int iChild = 0; iChild < nChildren; iChild++) {

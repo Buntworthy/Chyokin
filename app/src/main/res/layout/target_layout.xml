@@ -6,33 +6,33 @@
     android:id="@+id/target_bar">
 
     <View
-        android:layout_width="12dp"
-        android:layout_height="12dp"
+        android:layout_width="@dimen/target_blank_size"
+        android:layout_height="@dimen/target_blank_size"
         android:background="@drawable/target_blank"
         android:layout_margin="3dp"/>
     <View
-        android:layout_width="12dp"
-        android:layout_height="12dp"
+        android:layout_width="@dimen/target_blank_size"
+        android:layout_height="@dimen/target_blank_size"
         android:background="@drawable/target_blank"
         android:layout_margin="3dp"/>
     <View
-        android:layout_width="12dp"
-        android:layout_height="12dp"
+        android:layout_width="@dimen/target_blank_size"
+        android:layout_height="@dimen/target_blank_size"
         android:background="@drawable/target_blank"
         android:layout_margin="3dp"/>
     <View
-        android:layout_width="12dp"
-        android:layout_height="12dp"
+        android:layout_width="@dimen/target_blank_size"
+        android:layout_height="@dimen/target_blank_size"
         android:background="@drawable/target_blank"
         android:layout_margin="3dp"/>
     <View
-        android:layout_width="12dp"
-        android:layout_height="12dp"
+        android:layout_width="@dimen/target_blank_size"
+        android:layout_height="@dimen/target_blank_size"
         android:background="@drawable/target_blank"
         android:layout_margin="3dp"/>
     <View
-        android:layout_width="12dp"
-        android:layout_height="12dp"
+        android:layout_width="@dimen/target_blank_size"
+        android:layout_height="@dimen/target_blank_size"
         android:background="@drawable/target_blank"
         android:layout_margin="3dp"/>
 
