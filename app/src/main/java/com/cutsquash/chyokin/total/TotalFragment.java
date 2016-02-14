@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -30,6 +31,7 @@ import com.cutsquash.chyokin.data.Target;
 import com.cutsquash.chyokin.utils.AnimUtils;
 import com.cutsquash.chyokin.utils.DeleteDialog;
 import com.cutsquash.chyokin.utils.TargetDialog;
+import com.cutsquash.chyokin.utils.TargetView;
 import com.cutsquash.chyokin.utils.Utils;
 
 import java.util.List;
@@ -43,23 +45,27 @@ public class TotalFragment extends Fragment implements TotalContract.View {
     private int mCurrentValue;
     private int mTotal;
     private boolean saveStatus;
+    private TargetView mTargetView;
 
     public TotalFragment() {
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
+        Log.d("total", "onActivityCreated");
         super.onActivityCreated(savedInstanceState);
         setHasOptionsMenu(true);
         Model model = new Model(new DataStoreFile(getContext()));
         ModelContract.Target target = new Target(getActivity());
         mPresenter = new TotalPresenter(this, model, target);
         mPresenter.onCreate();
+        Log.d("total", "everything done");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Log.d("total", "oncreateview");
         final View rootView = inflater.inflate(R.layout.fragment_total, container, false);
         // Add listener
         rootView.findViewById(R.id.button_add).setOnClickListener(new View.OnClickListener() {
@@ -93,8 +99,11 @@ public class TotalFragment extends Fragment implements TotalContract.View {
                     }
                 });
 
-        return rootView;
+        mTargetView = new TargetView(getContext(),
+                (ViewGroup) rootView.findViewById(R.id.target_bar));
 
+        Log.d("total", "create view done");
+        return rootView;
     }
 
     @Override
@@ -218,9 +227,8 @@ public class TotalFragment extends Fragment implements TotalContract.View {
 
     @Override
     public void updateTargetDisplay(float fraction) {
-        ProgressBar bar = (ProgressBar) getView().findViewById(R.id.progress_bar);
-        float progress = fraction * bar.getMax();
-        bar.setProgress((int) progress);
+
+        mTargetView.setProgress(fraction);
     }
 
 

@@ -34,6 +34,7 @@ public class DataStoreFile implements ModelContract.DataStore {
         if (file.exists()) {
             // Read in the file
             FileInputStream inputStream = mContext.openFileInput(DATA_FILENAME);
+            Log.d("datastore", "Found data file");
             if (inputStream.available() > 0) {
                 ObjectInputStream ois = new ObjectInputStream(inputStream);
                 data = (LinkedHashMap<Long, Integer>) ois.readObject();
@@ -43,6 +44,7 @@ public class DataStoreFile implements ModelContract.DataStore {
                 data.put(System.currentTimeMillis(), 0);
             }
             inputStream.close();
+            Log.d("datastore", "Finished reading data");
         } else {
             // No existing file
             Log.d(this.toString(), "No existing file");
