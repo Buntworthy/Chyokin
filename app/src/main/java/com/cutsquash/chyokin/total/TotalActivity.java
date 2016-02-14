@@ -1,6 +1,7 @@
 package com.cutsquash.chyokin.total;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -19,11 +20,21 @@ public class TotalActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(getString(R.string.testDevice_id))
-                .build();
-        mAdView.loadAd(adRequest);
+        // Run admob with a delay to prevent slowdown in app startup
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                mAdView = (AdView) findViewById(R.id.adView);
+                AdRequest adRequest = new AdRequest.Builder()
+                        .addTestDevice(getString(R.string.testDevice_id))
+                        .build();
+                mAdView.loadAd(adRequest);
+
+            }
+        }, 2000);
+
     }
 
     @Override
