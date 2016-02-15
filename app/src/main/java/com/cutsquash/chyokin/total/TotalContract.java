@@ -43,6 +43,8 @@ public interface TotalContract {
 
         void updateTotal();
 
+        public int getTarget();
+
         void setTarget(int target);
 
     }

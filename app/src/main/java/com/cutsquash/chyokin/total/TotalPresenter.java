@@ -142,6 +142,11 @@ public class TotalPresenter
     }
 
     @Override
+    public int getTarget() {
+        return mTarget.getTarget();
+    }
+
+    @Override
     public void setTarget(int target) {
         mTarget.setTarget(target);
         if (mTarget.getTarget() > 0) {

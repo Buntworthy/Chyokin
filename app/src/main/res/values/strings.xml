@@ -23,7 +23,7 @@
     <string name="target_cancel">Cancel</string>
     <string name="action_setTarget">Set target</string>
     <string name="target_dialog_message">Set your savings target in £</string>
-    <string name="target_dialog_hint">Savings target (£)</string>
+    <string name="target_dialog_hint">Enter savings target (£)</string>
     <string name="github_repo">https://github.com/Buntworthy/Chyokin</string>
     <string name="twitter">https://twitter.com/Buntworthy</string>
 </resources>

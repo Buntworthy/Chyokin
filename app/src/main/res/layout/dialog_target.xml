@@ -11,7 +11,6 @@
         android:layout_marginTop="16dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
-        android:layout_marginBottom="16dp"
-        android:hint="@string/target_dialog_hint" />
+        android:layout_marginBottom="16dp"/>
 
 </LinearLayout>

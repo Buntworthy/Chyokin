@@ -5,8 +5,11 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.cutsquash.chyokin.R;
 
@@ -22,20 +25,32 @@ public class TargetDialog extends DialogFragment {
 
     // Use this instance of the interface to deliver action events
     private TargetDialogListener mListener;
+    private int currentTarget = 0;
 
     public void setListener(TargetDialogListener listener) {
         mListener = listener;
     }
 
+    public void setCurrentTarget(int target) {
+        currentTarget = target;
+    }
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Use the Builder class for convenient dialog construction
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        // TODO add text changed listener for currency formatting
 
-        builder.setView(inflater.inflate(R.layout.dialog_target, null))
+        Log.d("TargetDialog", Integer.toString(currentTarget));
+        String currentTargetString = (currentTarget > 0)
+                ? String.format("Current target is £%d", currentTarget/100)
+                :  "Enter savings target (£)";
+
+        View dialogView = inflater.inflate(R.layout.dialog_target, null);
+        EditText textEntry = (EditText) dialogView.findViewById(R.id.target);
+        textEntry.setHint(currentTargetString);
+
+        builder.setView(dialogView)
                 .setMessage(getString(R.string.target_dialog_message))
                 .setPositiveButton(R.string.target_confirm, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {

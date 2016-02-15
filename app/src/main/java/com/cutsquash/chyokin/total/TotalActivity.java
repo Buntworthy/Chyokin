@@ -19,7 +19,6 @@ public class TotalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_total);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         // Run admob with a delay to prevent slowdown in app startup
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {

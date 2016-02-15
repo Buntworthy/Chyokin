@@ -126,6 +126,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         } else if (id == R.id.action_setTarget) {
             TargetDialog dialog = new TargetDialog();
             dialog.setListener((TargetDialog.TargetDialogListener) mPresenter);
+            dialog.setCurrentTarget(mPresenter.getTarget());
             dialog.show(getFragmentManager(), "setTarget");
         } else if (id == R.id.action_about) {
             Intent intent = new Intent(getContext(), AboutActivity.class);
