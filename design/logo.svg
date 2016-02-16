@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="logo.svg">
+  <defs
+     id="defs4">
+    <filter
+       inkscape:collect="always"
+       id="filter3859">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="4.4413699"
+         id="feGaussianBlur3861" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7502414"
+     inkscape:cx="-1383.3715"
+     inkscape:cy="1091.3245"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3079"
+       style="fill:#000000;fill-opacity:1;opacity:0.44247787999999999;filter:url(#filter3859)">
+      <path
+         sodipodi:type="arc"
+         style="fill:#000000;fill-opacity:1;stroke:none"
+         id="path3075"
+         sodipodi:cx="294.45947"
+         sodipodi:cy="243.73508"
+         sodipodi:rx="83.337585"
+         sodipodi:ry="83.337585"
+         d="m 377.79706,243.73508 a 83.337585,83.337585 0 1 1 -166.67517,0 83.337585,83.337585 0 1 1 166.67517,0 z"
+         transform="translate(-1640.6928,-347.39512)"
+         inkscape:export-filename="C:\Users\Justin\Documents\Development\Android\Chyokin\design\chyokin.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300" />
+      <path
+         transform="matrix(0.40003061,0,0,0.40003061,-1464.0261,-113.05185)"
+         d="m 377.79706,243.73508 a 83.337585,83.337585 0 1 1 -166.67517,0 83.337585,83.337585 0 1 1 166.67517,0 z"
+         sodipodi:ry="83.337585"
+         sodipodi:rx="83.337585"
+         sodipodi:cy="243.73508"
+         sodipodi:cx="294.45947"
+         id="path3077"
+         style="fill:#000000;fill-opacity:1;stroke:none"
+         sodipodi:type="arc"
+         inkscape:export-filename="C:\Users\Justin\Documents\Development\Android\Chyokin\design\chyokin.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300" />
+    </g>
+    <rect
+       style="fill:#4db6ac;fill-opacity:1;stroke:none"
+       id="rect3923"
+       width="533.36053"
+       height="77.781746"
+       x="-754.95477"
+       y="333.63864" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ef5350;fill-opacity:1;stroke:none"
+       id="path3905"
+       sodipodi:cx="294.45947"
+       sodipodi:cy="243.73508"
+       sodipodi:rx="83.337585"
+       sodipodi:ry="83.337585"
+       d="m 377.79706,243.73508 a 83.337585,83.337585 0 1 1 -166.67517,0 83.337585,83.337585 0 1 1 166.67517,0 z"
+       transform="matrix(0.13432988,0,0,0.13432988,-527.82921,303.46997)"
+       inkscape:export-filename="C:\Users\Justin\Desktop\dot.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <flowRoot
+       transform="translate(-587.81653,-383.93846)"
+       style="font-size:40px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#4db6ac;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot3831"
+       xml:space="preserve"><flowRegion
+         id="flowRegion3833"><rect
+           style="text-align:center;text-anchor:middle;fill:#4db6ac;fill-opacity:1"
+           y="396.77319"
+           x="-95.964493"
+           height="142.4315"
+           width="389.91888"
+           id="rect3835" /></flowRegion><flowPara
+         style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#4db6ac;fill-opacity:1;font-family:Century Gothic;-inkscape-font-specification:Century Gothic"
+         id="flowPara3837"><flowSpan
+           id="flowSpan3839"
+           style="text-align:center;text-anchor:middle;fill:#4db6ac;fill-opacity:1">&quot;Lorem ipsum dolor sit amet.</flowSpan></flowPara><flowPara
+         id="flowPara3841"
+         style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#4db6ac;fill-opacity:1;font-family:Century Gothic;-inkscape-font-specification:Century Gothic" /><flowPara
+         id="flowPara3843"
+         style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#4db6ac;fill-opacity:1;font-family:Century Gothic;-inkscape-font-specification:Century Gothic"><flowSpan
+   id="flowSpan3845"
+   style="text-align:center;text-anchor:middle;fill:#4db6ac;fill-opacity:1">Consectetur </flowSpan>adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </flowPara><flowPara
+         id="flowPara3847"
+         style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#4db6ac;fill-opacity:1;font-family:Century Gothic;-inkscape-font-specification:Century Gothic" /><flowPara
+         id="flowPara3849"
+         style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#4db6ac;fill-opacity:1;font-family:Century Gothic;-inkscape-font-specification:Century Gothic">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;</flowPara></flowRoot>    <path
+       transform="translate(-271.59682,5.069786)"
+       d="m 377.79706,243.73508 a 83.337585,83.337585 0 1 1 -166.67517,0 83.337585,83.337585 0 1 1 166.67517,0 z"
+       sodipodi:ry="83.337585"
+       sodipodi:rx="83.337585"
+       sodipodi:cy="243.73508"
+       sodipodi:cx="294.45947"
+       id="path3789"
+       style="fill:#51c2ca;fill-opacity:1;stroke:none"
+       sodipodi:type="arc" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ca5151;fill-opacity:1;stroke:none"
+       id="path3791"
+       sodipodi:cx="294.45947"
+       sodipodi:cy="243.73508"
+       sodipodi:rx="83.337585"
+       sodipodi:ry="83.337585"
+       d="m 377.79706,243.73508 a 83.337585,83.337585 0 1 1 -166.67517,0 83.337585,83.337585 0 1 1 166.67517,0 z"
+       transform="matrix(0.40003061,0,0,0.40003061,-94.930122,239.41305)" />
+    <rect
+       style="fill:#d2caca;fill-opacity:1;stroke:none"
+       id="rect3765"
+       width="1348.5714"
+       height="1167.1428"
+       x="538.57141"
+       y="16.647898" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       id="rect3769"
+       width="270"
+       height="270"
+       x="716.42859"
+       y="168.79074" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#51c2ca;fill-opacity:1;stroke:none"
+       id="path2985"
+       sodipodi:cx="294.45947"
+       sodipodi:cy="243.73508"
+       sodipodi:rx="83.337585"
+       sodipodi:ry="83.337585"
+       d="m 377.79706,243.73508 a 83.337585,83.337585 0 1 1 -166.67517,0 83.337585,83.337585 0 1 1 166.67517,0 z"
+       transform="translate(3.2539063,-6.3146667)" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;text-anchor:middle;text-align:center"
+       x="297.94775"
+       y="245.75537"
+       id="text2987"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2989"
+         x="240.92139"
+         y="245.75537"
+         style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;fill-opacity:1;font-family:Century Gothic;-inkscape-font-specification:Century Gothic;text-anchor:middle;text-align:center">Chyokin</tspan></text>
+    <path
+       transform="matrix(0.40003061,0,0,0.40003061,179.92058,269.20463)"
+       d="m 377.79706,243.73508 a 83.337585,83.337585 0 1 1 -166.67517,0 83.337585,83.337585 0 1 1 166.67517,0 z"
+       sodipodi:ry="83.337585"
+       sodipodi:rx="83.337585"
+       sodipodi:cy="243.73508"
+       sodipodi:cx="294.45947"
+       id="path3759"
+       style="fill:#ca5151;fill-opacity:1;stroke:none"
+       sodipodi:type="arc" />
+    <g
+       id="g3771"
+       transform="translate(4.4294962,3.1560459)">
+      <path
+         sodipodi:type="arc"
+         style="fill:#51c2ca;fill-opacity:1;stroke:none"
+         id="path3761"
+         sodipodi:cx="294.45947"
+         sodipodi:cy="243.73508"
+         sodipodi:rx="83.337585"
+         sodipodi:ry="83.337585"
+         d="m 377.79706,243.73508 c 0,46.02607 -37.31151,83.33758 -83.33759,83.33758 -46.02607,0 -83.33758,-37.31151 -83.33758,-83.33758 0,-46.02608 37.31151,-83.33759 83.33758,-83.33759 46.02608,0 83.33759,37.31151 83.33759,83.33759 z"
+         transform="translate(552.53962,17.256762)" />
+      <path
+         transform="matrix(0.40003061,0,0,0.40003061,729.20629,292.77606)"
+         d="m 377.79706,243.73508 c 0,46.02607 -37.31151,83.33758 -83.33759,83.33758 -46.02607,0 -83.33758,-37.31151 -83.33758,-83.33758 0,-46.02608 37.31151,-83.33759 83.33758,-83.33759 46.02608,0 83.33759,37.31151 83.33759,83.33759 z"
+         sodipodi:ry="83.337585"
+         sodipodi:rx="83.337585"
+         sodipodi:cy="243.73508"
+         sodipodi:cx="294.45947"
+         id="path3763"
+         style="fill:#ca5151;fill-opacity:1;stroke:none"
+         sodipodi:type="arc" />
+    </g>
+    <rect
+       y="162.23962"
+       x="1236.2998"
+       height="224.54314"
+       width="224.54314"
+       id="rect3775"
+       style="fill:#ffffff;fill-opacity:1;stroke:none" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#51c2ca;fill-opacity:1;stroke:none"
+       id="path3779"
+       sodipodi:cx="294.45947"
+       sodipodi:cy="243.73508"
+       sodipodi:rx="83.337585"
+       sodipodi:ry="83.337585"
+       d="m 377.79706,243.73508 a 83.337585,83.337585 0 1 1 -166.67517,0 83.337585,83.337585 0 1 1 166.67517,0 z"
+       transform="translate(1054.112,11.841379)" />
+    <path
+       transform="matrix(0.40003061,0,0,0.40003061,1230.7787,246.18464)"
+       d="m 377.79706,243.73508 a 83.337585,83.337585 0 1 1 -166.67517,0 83.337585,83.337585 0 1 1 166.67517,0 z"
+       sodipodi:ry="83.337585"
+       sodipodi:rx="83.337585"
+       sodipodi:cy="243.73508"
+       sodipodi:cx="294.45947"
+       id="path3781"
+       style="fill:#ca5151;fill-opacity:1;stroke:none"
+       sodipodi:type="arc" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3785"
+       y="257.13983"
+       x="23.097029"
+       style="font-size:40px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;font-family:Century Gothic;-inkscape-font-specification:Century Gothic"
+         y="257.13983"
+         x="23.097029"
+         id="tspan3787"
+         sodipodi:role="line">Chyokin</tspan></text>
+    <path
+       sodipodi:type="arc"
+       style="fill:#4db6ac;fill-opacity:1;stroke:none"
+       id="path3793"
+       sodipodi:cx="294.45947"
+       sodipodi:cy="243.73508"
+       sodipodi:rx="83.337585"
+       sodipodi:ry="83.337585"
+       d="m 377.79706,243.73508 a 83.337585,83.337585 0 1 1 -166.67517,0 83.337585,83.337585 0 1 1 166.67517,0 z"
+       transform="translate(-782.73401,-405.05215)"
+       inkscape:export-filename="C:\Users\Justin\Documents\Development\Android\Chyokin\design\logo.png"
+       inkscape:export-xdpi="150.11234"
+       inkscape:export-ydpi="150.11234" />
+    <path
+       transform="matrix(0.40003061,0,0,0.40003061,-606.06731,-170.70888)"
+       d="m 377.79706,243.73508 a 83.337585,83.337585 0 1 1 -166.67517,0 83.337585,83.337585 0 1 1 166.67517,0 z"
+       sodipodi:ry="83.337585"
+       sodipodi:rx="83.337585"
+       sodipodi:cy="243.73508"
+       sodipodi:cx="294.45947"
+       id="path3795"
+       style="fill:#ef5350;fill-opacity:1;stroke:none"
+       sodipodi:type="arc"
+       inkscape:export-filename="C:\Users\Justin\Documents\Development\Android\Chyokin\design\logo.png"
+       inkscape:export-xdpi="150.11234"
+       inkscape:export-ydpi="150.11234" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-488.04016"
+       y="-152.9821"
+       id="text3797"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="C:\Users\Justin\Documents\Development\Android\Chyokin\design\logo.png"
+       inkscape:export-xdpi="150.11234"
+       inkscape:export-ydpi="150.11234"><tspan
+         sodipodi:role="line"
+         id="tspan3799"
+         x="-488.04016"
+         y="-152.9821"
+         style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;font-family:Century Gothic;-inkscape-font-specification:Century Gothic">Chyokin</tspan></text>
+    <flowRoot
+       transform="translate(-587.81653,-194.36703)"
+       style="font-size:40px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#4db6ac;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot3859"
+       xml:space="preserve"><flowRegion
+         id="flowRegion3861"><rect
+           style="text-align:center;text-anchor:middle;fill:#4db6ac;fill-opacity:1"
+           y="396.77319"
+           x="-95.964493"
+           height="142.4315"
+           width="389.91888"
+           id="rect3863" /></flowRegion><flowPara
+         id="flowPara3877"
+         style="font-size:25px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#4db6ac;fill-opacity:1;font-family:Century Gothic;-inkscape-font-specification:Century Gothic">Download on</flowPara><flowPara
+         style="font-size:25px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#4db6ac;fill-opacity:1;font-family:Century Gothic;-inkscape-font-specification:Century Gothic"
+         id="flowPara3899"> Google Play</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3929"
+       style="font-size:40px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#4db6ac;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(-1005.8165,-374.36703)"><flowRegion
+         id="flowRegion3931"><rect
+           id="rect3933"
+           width="389.91888"
+           height="142.4315"
+           x="-95.964493"
+           y="396.77319"
+           style="text-align:center;text-anchor:middle;fill:#4db6ac;fill-opacity:1" /></flowRegion><flowPara
+         id="flowPara3937"
+         style="font-size:25px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#4db6ac;fill-opacity:1;font-family:Century Gothic;-inkscape-font-specification:Century Gothic">Teal 300 - 4DB6ACFF</flowPara></flowRoot>    <flowRoot
+       transform="translate(-1005.8165,-334.36703)"
+       style="font-size:40px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ef5350;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot3939"
+       xml:space="preserve"><flowRegion
+         id="flowRegion3941"><rect
+           style="text-align:center;text-anchor:middle;fill:#ef5350;fill-opacity:1"
+           y="396.77319"
+           x="-95.964493"
+           height="142.4315"
+           width="389.91888"
+           id="rect3943" /></flowRegion><flowPara
+         style="font-size:25px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#ef5350;fill-opacity:1;font-family:Century Gothic;-inkscape-font-specification:Century Gothic"
+         id="flowPara3947">Red 400 - EF5350FF</flowPara></flowRoot>    <path
+       sodipodi:type="arc"
+       style="fill:#4db6ac;fill-opacity:1;stroke:none"
+       id="path3793-1"
+       sodipodi:cx="294.45947"
+       sodipodi:cy="243.73508"
+       sodipodi:rx="83.337585"
+       sodipodi:ry="83.337585"
+       d="m 377.79706,243.73508 a 83.337585,83.337585 0 1 1 -166.67517,0 83.337585,83.337585 0 1 1 166.67517,0 z"
+       transform="translate(-1640.6928,-347.39512)"
+       inkscape:export-filename="C:\Users\Justin\Documents\Development\Android\Chyokin\design\chyokin.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       transform="matrix(0.40003061,0,0,0.40003061,-1464.0261,-113.05185)"
+       d="m 377.79706,243.73508 a 83.337585,83.337585 0 1 1 -166.67517,0 83.337585,83.337585 0 1 1 166.67517,0 z"
+       sodipodi:ry="83.337585"
+       sodipodi:rx="83.337585"
+       sodipodi:cy="243.73508"
+       sodipodi:cx="294.45947"
+       id="path3795-7"
+       style="fill:#ef5350;fill-opacity:1;stroke:none"
+       sodipodi:type="arc"
+       inkscape:export-filename="C:\Users\Justin\Documents\Development\Android\Chyokin\design\chyokin.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+  </g>
+</svg>

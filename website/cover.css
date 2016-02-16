@@ -26,6 +26,8 @@ h1 {
 
 .footer {
   text-align: center;
+  padding-top:2%;
+  font-family:Century Gothic;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
