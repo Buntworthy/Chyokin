@@ -149,15 +149,19 @@ public class TotalFragment extends Fragment implements TotalContract.View {
 
         saveStatus = save;
         final View animView;
+        final int animationResource;
         if (save) {
             animView = getView().findViewById(R.id.add_animation);
+            animationResource = R.anim.save_button_anim;
             } else {
             animView = getView().findViewById(R.id.waste_animation);
+            animationResource = R.anim.waste_button_anim;
         }
         animView.setVisibility(View.VISIBLE);
+
         Animation animation = AnimUtils.animationWithCallback(
                 // Animation
-                AnimationUtils.loadAnimation(getContext(), R.anim.save_button_anim),
+                AnimationUtils.loadAnimation(getContext(), animationResource),
                 // Callback
                 new AnimUtils.AnimationCallback() {
                     @Override
@@ -181,15 +185,18 @@ public class TotalFragment extends Fragment implements TotalContract.View {
 
         if (withAnimation) {
             final View animView;
+            final int animationResource;
             if (saveStatus) {
                 animView = getView().findViewById(R.id.add_animation);
+                animationResource = R.anim.save_button_reverse_anim;
             } else {
                 animView = getView().findViewById(R.id.waste_animation);
+                animationResource = R.anim.waste_button_reverse_anim;
             }
             animView.setVisibility(View.VISIBLE);
             Animation animation = AnimUtils.animationWithCallback(
                     // Animation
-                    AnimationUtils.loadAnimation(getContext(), R.anim.save_button_reverse_anim),
+                    AnimationUtils.loadAnimation(getContext(), animationResource),
                     // Callback
                     new AnimUtils.AnimationCallback() {
                         @Override
