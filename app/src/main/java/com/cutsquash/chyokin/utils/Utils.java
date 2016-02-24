@@ -28,4 +28,18 @@ public class Utils {
 
         return visited;
     }
+
+    // Adding £ and p symbols to value
+    public static String formatValue(int value) {
+        String formatted = Integer.toString(value);
+        if (Math.abs(value) < 100) { // pence
+            formatted += "p";
+        } else { // pounds
+            formatted = new StringBuilder(formatted)
+                    .insert(formatted.length() - 2, ".")
+                    .insert(0, "£")
+                    .toString();
+        }
+        return formatted;
+    }
 }

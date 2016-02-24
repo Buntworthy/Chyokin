@@ -19,7 +19,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.cutsquash.chyokin.R;
@@ -227,7 +226,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
             currentValue *= 100;
         }
         mCurrentValue = currentValue;
-        String formattedValue = formatValue(currentValue);
+        String formattedValue = Utils.formatValue(currentValue);
         TextView valueDisplay = (TextView) getView().findViewById(R.id.valueDisplay);
         valueDisplay.setText(formattedValue);
 
@@ -314,20 +313,6 @@ public class TotalFragment extends Fragment implements TotalContract.View {
 
     }
 
-    // Adding £ and p symbols to value
-    private String formatValue(int value) {
-        String formatted = Integer.toString(value);
-        if (value < 100) { // pence
-            formatted += "p";
-        } else { // pounds
-            formatted = new StringBuilder(formatted)
-                    .insert(formatted.length() - 2, ".")
-                    .insert(0, "£")
-                    .toString();
-        }
-        return formatted;
-    }
-
     // Animate increase in the total view
     private void startCountAnimation(final TextView view, int startValue, int endValue) {
         ValueAnimator animator = new ValueAnimator();
@@ -335,7 +320,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         animator.setDuration(500);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             public void onAnimationUpdate(ValueAnimator animation) {
-                view.setText(formatValue((int) animation.getAnimatedValue()));
+                view.setText(Utils.formatValue((int) animation.getAnimatedValue()));
             }
         });
         animator.start();
