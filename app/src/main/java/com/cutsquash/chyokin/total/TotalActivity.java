@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.cutsquash.chyokin.R;
 import com.google.android.gms.ads.AdRequest;
@@ -58,5 +59,16 @@ public class TotalActivity extends AppCompatActivity {
             mAdView.destroy();
         }
         super.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed(){
+        TotalFragment fragment = (TotalFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
+        if (fragment.getView().findViewById(R.id.addView).getVisibility() == View.VISIBLE) {
+            // If the add view is visible, switch to the total view
+            fragment.showTotalView(true);
+        } else {
+            super.onBackPressed();
+        }
     }
 }
