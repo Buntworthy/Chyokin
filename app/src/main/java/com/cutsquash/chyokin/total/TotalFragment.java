@@ -167,6 +167,7 @@ public class TotalFragment extends Fragment implements TotalContract.View {
                     public void callback() {
                         animView.setVisibility(View.GONE);
                         getView().findViewById(R.id.totalView).setVisibility(View.GONE);
+                        setSubmitText(save);
                         setViewColours(save);
                         animateShowAddView();
                     }
@@ -174,6 +175,15 @@ public class TotalFragment extends Fragment implements TotalContract.View {
         animView.startAnimation(animation);
         clearValueDisplay();
 
+    }
+
+    private void setSubmitText(boolean save) {
+        Button submitButton = (Button) getView().findViewById(R.id.submit);
+        if (save) {
+            submitButton.setText("s");
+        } else {
+            submitButton.setText("w");
+        }
     }
 
     @Override
