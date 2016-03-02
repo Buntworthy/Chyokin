@@ -41,5 +41,8 @@ dependencies {
     androidTestCompile 'com.android.support.test:runner:0.4.1'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
 
+    // On boarding library
+    compile 'com.github.paolorotolo:appintro:3.4.0'
+
 
 }

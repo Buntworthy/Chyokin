@@ -26,4 +26,6 @@
     <string name="target_dialog_hint">Enter savings target (£)</string>
     <string name="github_repo">https://github.com/Buntworthy/Chyokin</string>
     <string name="twitter">https://twitter.com/Buntworthy</string>
+    <string name="shared_prefs">Chyokin_Prefs</string>
+    <string name="onBoarding_key">onboarding_complete</string>
 </resources>
