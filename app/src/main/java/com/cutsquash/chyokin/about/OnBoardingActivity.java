@@ -21,10 +21,22 @@ public class OnBoardingActivity extends AppIntro2 {
         // Instead of fragments, you can also use our default slide
         // Just set a title, description, background and image. AppIntro will do the rest.
         addSlide(AppIntroFragment
-                .newInstance("test", "hello", R.drawable.logo, Color.WHITE));
+                .newInstance("First",
+                        "Welcome, aim",
+                        R.drawable.logo,
+                        Color.WHITE, Color.DKGRAY, Color.DKGRAY));
         addSlide(AppIntroFragment
-                .newInstance("test2", "hello again", R.drawable.logo,
-                        ContextCompat.getColor(this, R.color.colorPrimarySave)));
+                .newInstance("Second",
+                        "Savints and waste",
+                        R.drawable.logo,
+                        ContextCompat.getColor(this, R.color.colorPrimarySave),
+                        Color.DKGRAY, Color.DKGRAY));
+        addSlide(AppIntroFragment
+                .newInstance("Third",
+                        "Target",
+                        R.drawable.logo,
+                        ContextCompat.getColor(this, R.color.colorPrimarySave),
+                        Color.DKGRAY, Color.DKGRAY));
 
         setProgressButtonEnabled(true);
 
