@@ -27,5 +27,10 @@
     <string name="github_repo">https://github.com/Buntworthy/Chyokin</string>
     <string name="twitter">https://twitter.com/Buntworthy</string>
     <string name="shared_prefs">Chyokin_Prefs</string>
+    <!-- On Boarding-->
     <string name="onBoarding_key">onboarding_complete</string>
+    <string name="onBoarding_desc1">Chyokin is a simple app to help you keep track of how much you save.</string>
+    <string name="onBoarding_desc2">See how much you\'ve saved so far.</string>
+    <string name="onBoarding_desc3">Set a target to save toward a goal.</string>
+    <string name="onBoarding_desc4">Input the amount every time you save.</string>
 </resources>

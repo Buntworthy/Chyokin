@@ -26,7 +26,7 @@ public class TotalActivity extends AppCompatActivity {
         SharedPreferences preferences =  getSharedPreferences(getString(R.string.shared_prefs), MODE_PRIVATE);
 
         // Check if onboarding_complete is false
-        if(!preferences.getBoolean(getString(R.string.onBoarding_key),false)) {
+        if(!preferences.getBoolean(getString(R.string.onBoarding_key), false)) {
             // Start the onboarding Activity
             Intent onboarding = new Intent(this, OnBoardingActivity.class);
             startActivity(onboarding);
@@ -52,7 +52,7 @@ public class TotalActivity extends AppCompatActivity {
                 mAdView.loadAd(adRequest);
 
             }
-        }, 2000);
+        }, 1000);
 
     }
 
