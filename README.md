@@ -11,8 +11,9 @@ Chyokin helps you keep track of how much you save (and when you waste), to see t
 # Aims
 
 A simple aim to learn/use:
-- MVP
-- Mockito
-- Espresso
+- MVP ✓
+- Mockito ✓
+- Espresso ✓
 - Butterknife
-- View animations
+- View animations ✓
+- Admob ✓
